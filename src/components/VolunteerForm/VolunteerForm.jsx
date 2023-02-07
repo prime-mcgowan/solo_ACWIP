@@ -6,77 +6,72 @@ import React from 'react';
 
 function VolunteerForm() {
 
-    const [firstName, setFirstName] = useState('');    
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
 
 
 
+
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const handleVolunteerProfileSubmission = (event) => {
+        event.preventDefault();
+
+        console.log(`Add a volunteer`)
+
+        dispatch({
+            type:'CREATE_NEW_VOLUNTEER',
+            payload: {
+                firstName: firstName,
+                lastName: lastName,
+                phoneNumber: phoneNumber,
+                email: email, 
+                birthdate: birthdate, 
+                address: address,
+                apt_suite_number: apt_suite_number,
+
+            }
+        }) 
+        // history.push to volunteer portal
+    }//end handleVolunteerProfileSubmission 
 
 
     return (
         <>
-            {/* <form>
-
-                <input 
-                    type="text"
-                    placeholder='First Name'
-                    // value={firstName}
-                    onChange={(event) => setFirstName(event.target.value)}
-                 />
-
-
-                <input 
-                    type="text"
-                    placeholder='Last Name'
-                    // value={lastName}
-                    onChange={(event) => setLastName(event.target.value)}
-                 />
-
-
-                <input 
-                    type="email"
-                    placeholder='e-mail'
-                    // value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                 />
-
-                <input 
-                    type="date"
-                    placeholder='Birthday'
-                    // value={birthday}
-                    onChange={(event) => setBirthday(event.target.value)}
-                 />
-
-                <input 
-                    type="text"
-                    placeholder='Last Name'
-                    // value={LastName}
-                    onChange={(event) => setLastName(event.target.value)}
-                 />
-
-            </form> */}
-
+          
+        <form onSubmit={handleVolunteerProfileSubmission}>
             <div className="container rounded bg-white mt-5 mb-5">
-    <div className="row">
-        <div className="col-md-3 border-right">
-            <div className="d-flex flex-column align-items-center text-center p-3 py-5"><img className="rounded-circle mt-5" width="150px" 
-            src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"/><span className="font-weight-bold">Edogaru</span><span className="text-black-50">edogaru@mail.com.my</span><span> </span></div>
-       
-       {/* https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg */}
-       
-       
-        </div>
-        <div className="col-md-5 border-right">
-            <div className="p-3 py-5">
-                <div className="d-flex justify-content-between align-items-center mb-3">
-                    <h4 className="text-right">Profile Settings</h4>
-                </div>
+                <div className="row">
+                    <div className="col-md-3 border-right">
+                        <div className="d-flex flex-column align-items-center text-center p-3 py-5"><img className="rounded-circle mt-5" width="150px" 
+                            src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"/><span className="font-weight-bold">Edogaru</span><span className="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+                                
+                                {/* https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg */}
+            </div>
+            {/* profile picture */}
+        
+        
+                <div className="col-md-5 border-right">
+                        <div className="p-3 py-5">
+                        <div className="d-flex justify-content-between align-items-center mb-3">
+                        <h4 className="text-right">ACWIP Profile Information</h4>
+                </div>  
+                {/* profile page title */}
+                
+                
                 <div className="row mt-2">
-                    <div className="col-md-6"><label className="labels">First Name</label><input type="text" className="form-control" placeholder="first name" value=""/></div>
-                    <div className="col-md-6"><label className="labels">Last Name</label><input type="text" className="form-control" value="" placeholder="last name"/></div>
+                    <div className="col-md-6"><label className="labels">First Name</label><input type="text" className="form-control" placeholder="first name" value={firstName} onChange={(event) => setFirstName(event.target.value)}/></div>
+                    <div className="col-md-6"><label className="labels">Last Name</label><input type="text" className="form-control" placeholder="last name" value={lastName} onChange={(event) => setLastName(event.target.value)}/></div>
                 </div>
+                {/* name inputs */}
+                
+                
                 <div className="row mt-3">
-                    <div className="col-md-12"><label className="labels">Phone Number</label><input type="text" className="form-control" placeholder="phone number" value=""/></div>
-                    <div className="col-md-12"><label className="labels">Email </label><input type="email" className="form-control" placeholder="email" value=""/></div>
+                    <div className="col-md-12"><label className="labels">Phone Number</label><input type="text" className="form-control" placeholder="phone number" value={phoneNumber} onChange={(event) => setPhoneNumber(event.target.value)}/></div>
+                    <div className="col-md-12"><label className="labels">Email </label><input type="email" className="form-control" placeholder="email" value={email} onChange={(event) => setEmail(event.target.value)}/></div>
                     <div className="col-md-12"><label className="labels">Birthdate</label><input type="date" className="form-control" placeholder="enter address" value=""/></div>
 
                     <div className="col-md-12"><label className="labels">Address</label><input type="text" className="form-control" placeholder="enter address" value=""/></div>
@@ -85,6 +80,7 @@ function VolunteerForm() {
                     <div className="col-md-12"><label className="labels">State</label><input type="text" className="form-control" placeholder="state" value=""/></div>
                     <div className="col-md-12"><label className="labels">Zip Code</label><input type="text" className="form-control" placeholder="zip code" value=""/></div>
                 </div>
+                {/* phone, email, birthday, address inputs */}
 
 
 
@@ -129,68 +125,42 @@ function VolunteerForm() {
             {/* End of radio button section */}
 
 
-                {/* <input class="form-control" type="text" 
-                value="Please tell us a little bit about yourself. Here are a few things you could include:
-                fjkldjfkdjfljfl"  */}
-                
-                
-
-                <div className="row mt-9">
-                <div className="col-md-9"><label className="labels">
-                    Please tell us a little bit about yourself. <br></br>Below are a few prompts to help you get started:
-                    * Tell us about your family and what you do for work.<br></br>
-                    * Why did you decide to volunteer with ACWIP?<br></br>
-                    * What are some of your hobbies?<br></br>
-                    * What is one of your favorite quotes and what does it mean to you?<br></br>
-                    * If you could learn to do anything, what would it be?<br></br>
-                    * If you could be any fictional character, who would you choose and why?
-                    </label></div>
-                </div>
-
-                
-                
-                
              
+            {/* Start of Profile Response section */}
+                <div className="row mt-9">
+                    <div className="col-md-9">
+                        <label className="labels">
+                            Please tell us a little bit about yourself. <br></br>Below are a few prompts to help you get started:
+                            * Tell us about your family and what you do for work.<br></br>
+                            * Why did you decide to volunteer with ACWIP?<br></br>
+                            * What are some of your hobbies?<br></br>
+                            * What is one of your favorite quotes and what does it mean to you?<br></br>
+                            * If you could learn to do anything, what would it be?<br></br>
+                            * If you could be any fictional character, who would you choose and why?
+                        </label>
+                    </div>
+                </div>
+             
+             {/* Please type your response below: */}
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Please type your response below:</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
 
-
-
-
-
-                <div className="row mt-3">
-                </div>
+            {/* Submit Button */}
+                <div className="row mt-3"></div>
                 <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button">Save Profile</button></div>
-            </div>
+            
+            
+            
         </div>
-        {/* <div className="col-md-4">
-            <div className="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
-                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""/></div> <br>
-                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""/></div>
-            </div> */}
         </div>
-    </div>
-{/* </div> */}
-{/* // </div>
-// </div> */}
+        </div>
+        </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-        </>
+        </form>
+      </>
     )//end of return
 }//end of VolunteerForm function
 
