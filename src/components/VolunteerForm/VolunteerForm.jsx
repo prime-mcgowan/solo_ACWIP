@@ -81,8 +81,9 @@ function VolunteerForm() {
 
                     <div className="col-md-12"><label className="labels">Address</label><input type="text" className="form-control" placeholder="enter address" value=""/></div>
                     <div className="col-md-12"><label className="labels">Apartment or Suite</label><input type="text" className="form-control" placeholder="apartment or suite number" value=""/></div>
-                    <div className="col-md-12"><label className="labels">Zip Code</label><input type="text" className="form-control" placeholder="zip code" value=""/></div>
+                    <div className="col-md-12"><label className="labels">City</label><input type="text" className="form-control" placeholder="city" value=""/></div>
                     <div className="col-md-12"><label className="labels">State</label><input type="text" className="form-control" placeholder="state" value=""/></div>
+                    <div className="col-md-12"><label className="labels">Zip Code</label><input type="text" className="form-control" placeholder="zip code" value=""/></div>
                 </div>
 
 
@@ -128,8 +129,32 @@ function VolunteerForm() {
             {/* End of radio button section */}
 
 
+                {/* <input class="form-control" type="text" 
+                value="Please tell us a little bit about yourself. Here are a few things you could include:
+                fjkldjfkdjfljfl"  */}
+                
+                
 
+                <div className="row mt-9">
+                <div className="col-md-9"><label className="labels">
+                    Please tell us a little bit about yourself. <br></br>Below are a few prompts to help you get started:
+                    * Tell us about your family and what you do for work.<br></br>
+                    * Why did you decide to volunteer with ACWIP?<br></br>
+                    * What are some of your hobbies?<br></br>
+                    * What is one of your favorite quotes and what does it mean to you?<br></br>
+                    * If you could learn to do anything, what would it be?<br></br>
+                    * If you could be any fictional character, who would you choose and why?
+                    </label></div>
+                </div>
 
+                
+                
+                
+             
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Please type your response below:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
 
 
 
