@@ -5,8 +5,12 @@ import './LandingPage.css';
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
+//Styling from: https://react-bootstrap.netlify.app/
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+
 function LandingPage() {
-  const [heading, setHeading] = useState('Welcome');
+  const [heading, setHeading] = useState();
   const history = useHistory();
 
   const onLogin = (event) => {
@@ -17,9 +21,130 @@ function LandingPage() {
     <div className="container">
       <h2>{heading}</h2>
 
+
+
+{/* Bootstrap Hero Section */}
+
+      <div class="container-fluid px-4 py-5 my-5 text-center">
+	        <div class="lc-block d-block mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
+  <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
+</svg>
+		        {/* <svg xmlns="http://www.w3" viewBox="0 0 496 512" width="5em" height="5em" lc-helper="svg-icon" fill="currentColor">
+			          <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path>
+		        </svg> */}
+	    </div>
+	    <div class="lc-block">
+		  <div editable="rich">
+			  <h2 class="display-5 fw-bold">Action Committee for Women in Prison</h2>
+      </div>
+	    </div>
+	  <div class="lc-block col-lg-6 mx-auto mb-4">
+		  <div editable="rich">
+			  <p class="lead ">Advocating for the humane and compassionate treatment of all incarcerated women.</p>
+		  </div>
+	  </div>
+
+	{/* <div class="lc-block d-grid gap-2 d-sm-flex justify-content-sm-center"> <a class="btn btn-primary btn-lg px-4 gap-3" href="#" role="button">Click me, I'm a button</a>
+
+	</div> */}
+</div>
+{/* End Bootstrap Hero Section */}
+
+
+{/* Bootstrap Columns */}
+{/* <div class="container text-center">
+  <div class="row">
+    <div class="col">
+      GET AQUAINTED
+    </div>
+    <div class="col">
+      GET INFORMED
+    </div>
+    <div class="col">
+      GET INVOLVED
+      <img src="images/energy.png" style="width:10em; height:10em;" alt="head"/>
+    </div>
+  </div>
+</div> */}
+{/* End Bootstrap Columns */}
+
+{/* <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> */}
+
+
+
+{/* From: https://react-bootstrap.netlify.app/ */}
+<CardGroup>
+      <Card>
+        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Body>
+          <Card.Title>Card title</Card.Title>
+          <Card.Text>
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <small className="text-muted">Last updated 3 mins ago</small>
+        </Card.Footer>
+      </Card>
+      <Card>
+        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Body>
+          <Card.Title>Card title</Card.Title>
+          <Card.Text>
+            This card has supporting text below as a natural lead-in to
+            additional content.{' '}
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <small className="text-muted">Last updated 3 mins ago</small>
+        </Card.Footer>
+      </Card>
+      <Card>
+        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Body>
+          <Card.Title>Card title</Card.Title>
+          <Card.Text>
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This card has even longer content than the
+            first to show that equal height action.
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <small className="text-muted">Last updated 3 mins ago</small>
+        </Card.Footer>
+      </Card>
+    </CardGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div className="grid">
-        <div className="grid-col grid-col_8">
-          <p>
+        {/* <div className="grid-col grid-col_8"> */}
+          {/* <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
             id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra lacus
             ut ex molestie blandit. Etiam et turpis sit amet risus mollis
@@ -29,9 +154,9 @@ function LandingPage() {
             interdum justo facilisis. Sed pulvinar nulla ac dignissim efficitur.
             Quisque eget eros metus. Vestibulum bibendum fringilla nibh a
             luctus. Duis a sapien metus.
-          </p>
+          </p> */}
 
-          <p>
+          {/* <p>
             Praesent consectetur orci dui, id elementum eros facilisis id. Sed
             id dolor in augue porttitor faucibus eget sit amet ante. Nunc
             consectetur placerat pharetra. Aenean gravida ex ut erat commodo, ut
@@ -40,17 +165,19 @@ function LandingPage() {
             euismod, augue at condimentum rhoncus, massa lorem semper lacus, sed
             lobortis augue mi vel felis. Duis ultrices sapien at est convallis
             congue.
-          </p>
+          </p> */}
 
-          <p>
+          {/* <p>
             Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
             Suspendisse posuere dapibus maximus. Aliquam vitae felis libero. In
             vehicula sapien at semper ultrices. Vivamus sed feugiat libero. Sed
             sagittis neque id diam euismod, ut egestas felis ultricies. Nullam
             non fermentum mauris. Sed in enim ac turpis faucibus pretium in sit
             amet nisi.
-          </p>
-        </div>
+          </p> */}
+
+
+        {/* </div> */}
         <div className="grid-col grid-col_4">
           <RegisterForm />
 
