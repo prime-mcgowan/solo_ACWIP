@@ -14,7 +14,7 @@ function* createVolunteer(action) {
 
         const response = yield axios({
             method: 'POST',
-            url: '/api/volunteer_form', 
+            url: '/profile', 
             data: newVolunteer
         });
         console.log('This is the newVolunteer in SAGA', newVolunteer)

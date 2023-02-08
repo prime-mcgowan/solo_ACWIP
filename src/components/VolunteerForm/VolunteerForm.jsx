@@ -17,6 +17,10 @@ function VolunteerForm() {
   const [state, setState] = useState('');
   const [zipCode, setZipCode] = useState('');
   const [mondayMailers, setMondayMailers] = useState('');
+  const [penpalProgram, setPenpalProgram] = useState('');
+  const [operationHolidays, setOperationHolidays] = useState('');
+  const [getOnTheBus, setGetOnTheBus] = useState('');
+
 
 
     const dispatch = useDispatch();
@@ -36,23 +40,27 @@ function VolunteerForm() {
                 city: city,
                 state: state,
                 zipCode:zipCode,
-                mondayMailers:mondayMailers
+                mondayMailers:mondayMailers,
+                penpalProgram: penpalProgram,
+                operationHolidays: operationHolidays,
+                getOnTheBus: getOnTheBus
         }
 
         console.log('This is a new volunteer', newVolunteer);
 
         dispatch({
             type:'SAGA/CREATE_NEW_VOLUNTEER',
-            payload: newVolunteer,        
+            payload: newVolunteer,
+        
         }) 
-        history.push('/volunteerPortal');// history.push to volunteer portal
+        history.push('/volunteerPortalPage');// history.push to volunteer portal
     }//end handleVolunteerProfileSubmission 
 
 
     return (
         <>
           
-        <form onSubmit={handleVolunteerProfileSubmission}>
+        <form>
 
              {/* profile picture sidebar */}
                 <div className="container rounded bg-white mt-5 mb-5">
@@ -106,20 +114,20 @@ function VolunteerForm() {
                             <label className="form-check-label" htmlFor="flexCheckDefault">Monday Mailers</label>
                         </div>
 
-                        {/* <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value={mondayMailers} onChange={(event) => setMondayMailers(event.target.value)} id="flexCheckDefault"/>
-                            <label className="form-check-label" htmlFor="flexCheckDefault">Monday Mailers</label>
+                        <div className="form-check">
+                            <input className="form-check-input" type="checkbox" value={penpalProgram} onChange={(event) => setPenpalProgram(event.target.value)} id="flexCheckDefault"/>
+                            <label className="form-check-label" htmlFor="flexCheckDefault">Penpal Program</label>
                         </div>
 
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value={mondayMailers} onChange={(event) => setMondayMailers(event.target.value)} id="flexCheckDefault"/>
-                            <label className="form-check-label" htmlFor="flexCheckDefault">Monday Mailers</label>
+                            <input className="form-check-input" type="checkbox" value={operationHolidays} onChange={(event) => setOperationHolidays(event.target.value)} id="flexCheckDefault"/>
+                            <label className="form-check-label" htmlFor="flexCheckDefault">Operation Holidays</label>
                         </div>
 
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value={mondayMailers} onChange={(event) => setMondayMailers(event.target.value)} id="flexCheckDefault"/>
-                            <label className="form-check-label" htmlFor="flexCheckDefault">Monday Mailers</label>
-                        </div> */}
+                            <input className="form-check-input" type="checkbox" value={getOnTheBus} onChange={(event) => setGetOnTheBus(event.target.value)} id="flexCheckDefault"/>
+                            <label className="form-check-label" htmlFor="flexCheckDefault">Get on the bus!!</label>
+                        </div>
 
 
              
@@ -161,7 +169,11 @@ function VolunteerForm() {
 
             {/* Submit Button */}
                 <div className="row mt-3"></div>
-                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                <div className="mt-5 text-center"><button  onClick={handleVolunteerProfileSubmission} className="btn btn-primary profile-button" type="button">SUBMIT</button></div>
+
+                <div className="row mt-3"></div>
+                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button">DELETE</button></div>
+            
             
             
             
