@@ -16,6 +16,7 @@ function VolunteerForm() {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zipCode, setZipCode] = useState('');
+  const [mondayMailers, setMondayMailers] = useState('');
 
 
     const dispatch = useDispatch();
@@ -24,11 +25,7 @@ function VolunteerForm() {
     const handleVolunteerProfileSubmission = (event) => {
         event.preventDefault();
 
-        console.log(`Add a volunteer`)
-
-        dispatch({
-            type:'CREATE_NEW_VOLUNTEER',
-            payload: {
+        let newVolunteer = {
                 firstName: firstName,
                 lastName: lastName,
                 phoneNumber: phoneNumber,
@@ -38,9 +35,15 @@ function VolunteerForm() {
                 apt_suite_number: apt_suite_number,
                 city: city,
                 state: state,
-                zipCode:zipCode
+                zipCode:zipCode,
+                mondayMailers:mondayMailers
+        }
 
-            }
+        console.log('This is a new volunteer', newVolunteer);
+
+        dispatch({
+            type:'SAGA/CREATE_NEW_VOLUNTEER',
+            payload: newVolunteer,        
         }) 
         history.push('/volunteerPortal');// history.push to volunteer portal
     }//end handleVolunteerProfileSubmission 
@@ -95,45 +98,28 @@ function VolunteerForm() {
 
 
 
-        {/* Start of Volunteer Opportunities radio button section */}
-                {/* <input className="form-control" type="text" value="What volunteer opportunities are you wanting to be a part of?" aria-label="readonly input example" readonly></input>
-               
-                <div className="input-group mb-3">
-                    <div className="input-group">
-                        <div className="input-group-text">
-                            <input className="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input"/>
-                        </div>
-                            <input type="text" className="form-control" value="Monday Mailers"aria-label="Text input with radio button"/>
-                    </div>
-                </div>
+        {/* Start of Volunteer Opportunities checkbox section */}
+                <input className="form-control" type="text" value="Please check the volunteer program(s) you would like to be a part of:" aria-label="readonly input example" readOnly/>
 
-                <div className="input-group mb-3">
-                    <div className="input-group">
-                        <div className="input-group-text">
-                            <input className="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input"/>
+                        <div className="form-check">
+                            <input className="form-check-input" type="checkbox" value={mondayMailers} onChange={(event) => setMondayMailers(event.target.value)} id="flexCheckDefault"/>
+                            <label className="form-check-label" htmlFor="flexCheckDefault">Monday Mailers</label>
                         </div>
-                            <input type="text" className="form-control" value="Penpal Program"aria-label="Text input with radio button"/>
-                    </div>
-                </div>
 
-                <div className="input-group mb-3">
-                    <div className="input-group">
-                        <div className="input-group-text">
-                            <input className="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input"/>
+                        {/* <div className="form-check">
+                            <input className="form-check-input" type="checkbox" value={mondayMailers} onChange={(event) => setMondayMailers(event.target.value)} id="flexCheckDefault"/>
+                            <label className="form-check-label" htmlFor="flexCheckDefault">Monday Mailers</label>
                         </div>
-                            <input type="text" className="form-control" value="Operation Holidays"aria-label="Text input with radio button"/>
-                    </div>
-                </div>
 
-                <div className="input-group mb-3">
-                    <div className="input-group">
-                        <div className="input-group-text">
-                            <input className="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input"/>
+                        <div className="form-check">
+                            <input className="form-check-input" type="checkbox" value={mondayMailers} onChange={(event) => setMondayMailers(event.target.value)} id="flexCheckDefault"/>
+                            <label className="form-check-label" htmlFor="flexCheckDefault">Monday Mailers</label>
                         </div>
-                            <input type="text" className="form-control" value="Get On the Bus!!"aria-label="Text input with radio button"/>
-                    </div>
-                </div> */}
-            {/* End of radio button section */}
+
+                        <div className="form-check">
+                            <input className="form-check-input" type="checkbox" value={mondayMailers} onChange={(event) => setMondayMailers(event.target.value)} id="flexCheckDefault"/>
+                            <label className="form-check-label" htmlFor="flexCheckDefault">Monday Mailers</label>
+                        </div> */}
 
 
              

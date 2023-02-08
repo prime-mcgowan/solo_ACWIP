@@ -22,7 +22,8 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 
 // My additions:
 import GetInvolvedPage from '../GetInvolvedPage/GetInvolvedPage';
-import VolunteerForm from '../VolunteerForm/VolunteerForm'
+import VolunteerForm from '../VolunteerForm/VolunteerForm';
+import VolunteerPortalPage from '../VolunteerPortalPage/VolunteerPortalPage';
 
 // Images in React App
 import 'holderjs';
@@ -65,6 +66,11 @@ function App() {
           <Route exact path="/volunteerForm">
               <VolunteerForm />
           </Route>
+
+ {/* VolunteerPortalPage */}
+          <Route exact path="/volunteerPortalPage">
+              <VolunteerPortalPage />
+          </Route>         
 
 
 
