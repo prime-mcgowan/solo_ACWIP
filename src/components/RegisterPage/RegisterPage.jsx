@@ -18,7 +18,7 @@ function RegisterPage() {
             history.push('/login');
           }}
         >
-          Login
+          {/* Login */}
         </button>
       </center>
     </div>
