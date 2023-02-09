@@ -1,7 +1,38 @@
-import React, { useState } from 'react';
+import {  useDispatch } from 'react-redux';
+import {  useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import React from 'react';
+
 
 function VolunteerPortalPage() {
+
+    const [toDo, setToDo] = useState('');
+
+
+
+    const dispatch = useDispatch();
+    
+
+    const handleToDoSubmission = (event) => {
+        event.preventDefault();
+
+        dispatch({
+            type: 'SAGA/CREATE_NEW_TO-DO', 
+            payload: newToDo,
+        })
+    }//end handleToDoSumbission
+
+
+    const handleNewLetterSubmission = (event) => {
+        event.preventDefault();
+
+        dispatch({
+            type: 'SAGA/CREATE_NEW_LETTER',
+            payload: newLetter
+        })
+    }
+
+
 
     return (
         <>
@@ -24,10 +55,11 @@ function VolunteerPortalPage() {
                     </div>
                 </div>
             </div>    
+            {/* end To-Do Tracker Container */}
             
            
            {/* Contact Corner */}
-            <div className="container">
+            <div className="Contact Corner container">
                     <div className="row">
                         <div className='col-6'>Contact Corner</div>
                     </div>
@@ -41,9 +73,8 @@ function VolunteerPortalPage() {
 
                 <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button">SEND</button></div>
 
-           
-            
             </div>
+            {/* end Contact Corner Containger */}
 
 
 

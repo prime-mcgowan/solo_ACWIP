@@ -17,10 +17,6 @@ function* createVolunteer(action) {
             url: '/profile', 
             data: newVolunteer
         });
-        console.log('This is the newVolunteer in SAGA', newVolunteer)
-        yield put({
-            type: 'SAGA/CREATE_NEW_VOLUNTEER'
-        });
     } catch (error) {
         console.log('newVolunteer POST request failed', error);
     }

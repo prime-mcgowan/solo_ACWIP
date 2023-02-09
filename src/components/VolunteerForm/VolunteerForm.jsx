@@ -16,10 +16,10 @@ function VolunteerForm() {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zipCode, setZipCode] = useState('');
-  const [mondayMailers, setMondayMailers] = useState('');
-  const [penpalProgram, setPenpalProgram] = useState('');
-  const [operationHolidays, setOperationHolidays] = useState('');
-  const [getOnTheBus, setGetOnTheBus] = useState('');
+  const [mondayMailers, setMondayMailers] = useState(false);
+  const [penpalProgram, setPenpalProgram] = useState(false);
+  const [operationHolidays, setOperationHolidays] = useState(false);
+  const [getOnTheBus, setGetOnTheBus] = useState(false);
   const [bioResponse, setBioResponse] = useState('');
 
 
@@ -29,6 +29,8 @@ function VolunteerForm() {
 
     const handleVolunteerProfileSubmission = (event) => {
         event.preventDefault();
+
+
 
         let newVolunteer = {
                 firstName: firstName,
@@ -58,7 +60,7 @@ function VolunteerForm() {
         history.push('/volunteerPortalPage');// history.push to volunteer portal
     }//end handleVolunteerProfileSubmission 
 
-
+   
     return (
         <>
           
@@ -112,22 +114,22 @@ function VolunteerForm() {
                 <input className="form-control" type="text" value="Please check the volunteer program(s) you would like to be a part of:" aria-label="readonly input example" readOnly/>
 
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value={mondayMailers} onChange={(event) => setMondayMailers(event.target.value)} id="flexCheckDefault"/>
+                            <input className="form-check-input" type="checkbox" checked={mondayMailers} onChange={() => setMondayMailers(!mondayMailers)} id="flexCheckDefault"/>
                             <label className="form-check-label" htmlFor="flexCheckDefault">Monday Mailers</label>
                         </div>
 
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value={penpalProgram} onChange={(event) => setPenpalProgram(event.target.value)} id="flexCheckDefault"/>
+                            <input className="form-check-input" type="checkbox" checked={penpalProgram} onChange={() => setPenpalProgram(!penpalProgram)} id="flexCheckDefault"/>
                             <label className="form-check-label" htmlFor="flexCheckDefault">Penpal Program</label>
                         </div>
 
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value={operationHolidays} onChange={(event) => setOperationHolidays(event.target.value)} id="flexCheckDefault"/>
+                            <input className="form-check-input" type="checkbox" checked={operationHolidays} onChange={() => setOperationHolidays(!operationHolidays)} id="flexCheckDefault"/>
                             <label className="form-check-label" htmlFor="flexCheckDefault">Operation Holidays</label>
                         </div>
 
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value={getOnTheBus} onChange={(event) => setGetOnTheBus(event.target.value)} id="flexCheckDefault"/>
+                            <input className="form-check-input" type="checkbox" checked={getOnTheBus} onChange={() => setGetOnTheBus(!getOnTheBus)} id="flexCheckDefault"/>
                             <label className="form-check-label" htmlFor="flexCheckDefault">Get on the bus!!</label>
                         </div>
 

@@ -15,15 +15,17 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   // POST route code here
   const newVolunteer = req.body;
+  console.log('***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n***********\n')
+  console.log(newVolunteer)
 
   const queryText = 
   `
     INSERT INTO volunteer_profiles
     ("first_name", "last_name", "email", "birthday", "address", "apt_suite_number",
     "city", "state", "zip_code", "is_monday_mailers", "is_penpal_program", "is_operation_holidays",
-    "is_get_on_the_bus""bio_response")
+    "is_get_on_the_bus", "bio_response", "user_id")
     VALUES
-    ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
+    ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
   `; 
   
   const queryValues = [
@@ -40,7 +42,8 @@ router.post('/', (req, res) => {
     newVolunteer.penpalProgram ,
     newVolunteer.operationHolidays,
     newVolunteer.getOnTheBus, 
-    newVolunteer.bioResponse
+    newVolunteer.bioResponse,
+    req.user.id
   ]//end queryValues
   pool.query(queryText, queryValues)
     .then(() => res.sendStatus(201))
