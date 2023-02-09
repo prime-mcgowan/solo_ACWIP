@@ -21,10 +21,15 @@ function VolunteerPortalPage() {
 
     const handleToDoSubmission = (event) => {
         event.preventDefault();
+        console.log(toDo);
+
+        
 
         dispatch({
-            type: 'SAGA/CREATE_NEW_TO-DO', 
-            payload: toDo,
+            type: 'SAGA/CREATE_NEW_TO_DO', 
+            payload: {
+                toDo:toDo
+            }
         })
         setToDo('');
     }//end handleToDoSumbission
