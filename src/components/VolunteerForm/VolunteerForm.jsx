@@ -20,6 +20,7 @@ function VolunteerForm() {
   const [penpalProgram, setPenpalProgram] = useState('');
   const [operationHolidays, setOperationHolidays] = useState('');
   const [getOnTheBus, setGetOnTheBus] = useState('');
+  const [bioResponse, setBioResponse] = useState('');
 
 
 
@@ -43,7 +44,8 @@ function VolunteerForm() {
                 mondayMailers:mondayMailers,
                 penpalProgram: penpalProgram,
                 operationHolidays: operationHolidays,
-                getOnTheBus: getOnTheBus
+                getOnTheBus: getOnTheBus,
+                bioResponse: bioResponse
         }
 
         console.log('This is a new volunteer', newVolunteer);
@@ -134,7 +136,7 @@ function VolunteerForm() {
             {/* Start of Bio Response section */}
                 <div className="mb-3">
                     <label htmlFor="exampleFormControlTextarea1" className="form-label">Tell us a little bit about yourself. Please type your response below.</label>
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea className="form-control" id="exampleFormControlTextarea1" value={bioResponse} onChange={(event) => setBioResponse(event.target.value)}rows="3"></textarea>
                 </div>
 
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Helpful Writing Prompts</button>

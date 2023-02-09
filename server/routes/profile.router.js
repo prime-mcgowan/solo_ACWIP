@@ -21,26 +21,26 @@ router.post('/', (req, res) => {
     INSERT INTO volunteer_profiles
     ("first_name", "last_name", "email", "birthday", "address", "apt_suite_number",
     "city", "state", "zip_code", "is_monday_mailers", "is_penpal_program", "is_operation_holidays",
-    "is_get_on_the_bus", "bio_response")
+    "is_get_on_the_bus""bio_response")
     VALUES
     ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
   `; 
   
   const queryValues = [
-    newVolunteer.first_name,
-    newVolunteer.last_name, 
+    newVolunteer.firstName,
+    newVolunteer.lastName, 
     newVolunteer.email, 
-    newVolunteer.birthday, 
+    newVolunteer.birthdate, 
     newVolunteer.address, 
     newVolunteer.apt_suite_number, 
     newVolunteer.city, 
     newVolunteer.state, 
-    newVolunteer.zip_code, 
-    newVolunteer.is_monday_mailers, 
-    newVolunteer.is_penpal_program, 
-    newVolunteer.is_operation_holidays,
-    newVolunteer.is_get_on_the_bus, 
-    newVolunteer.bio_response
+    newVolunteer.zipCode, 
+    newVolunteer.mondayMailers, 
+    newVolunteer.penpalProgram ,
+    newVolunteer.operationHolidays,
+    newVolunteer.getOnTheBus, 
+    newVolunteer.bioResponse
   ]//end queryValues
   pool.query(queryText, queryValues)
     .then(() => res.sendStatus(201))
@@ -52,7 +52,10 @@ router.post('/', (req, res) => {
 
 // how should i deal with "user_id" in the query???
 
+// "is_monday_mailers", "is_penpal_program", "is_operation_holidays",
+// "is_get_on_the_bus"
 
+// , $11, $12, $13, $14
 
 
 module.exports = router;
