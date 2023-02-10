@@ -5,9 +5,9 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
+// router.get('/', (req, res) => {
   // GET route code here
-});
+// });
 
 /**
  * POST route template
@@ -53,12 +53,51 @@ router.post('/', (req, res) => {
     })
 });//end newVolunteer POST route
 
-// how should i deal with "user_id" in the query???
 
-// "is_monday_mailers", "is_penpal_program", "is_operation_holidays",
-// "is_get_on_the_bus"
+//GET Route to get info for just one volunteer
+router.get('/', (req,res) => {
+  const idOfVolunteerToGet = req.user.id
+  const sqlQuery = 
+  `
+  SELECT 
+  volunteer_profiles.first_name,
+  volunteer_profiles.last_name, 
+  volunteer_profiles.email, 
+  volunteer_profiles.birthday, 
+  volunteer_profiles.address, 
+  volunteer_profiles.apt_suite_number, 
+  volunteer_profiles.city, 
+  volunteer_profiles.state, 
+  volunteer_profiles.zip_code, 
+  volunteer_profiles.is_monday_mailers, 
+  volunteer_profiles.is_penpal_program ,
+  volunteer_profiles.is_operation_holidays,
+  volunteer_profiles.is_get_on_the_bus, 
+  volunteer_profiles.bio_response
+  FROM volunteer_profiles
+      WHERE volunteer_profiles.user_id=$1;
+  
+  `;
+  const sqlValues = [idOfVolunteerToGet];
+  pool.query(sqlQuery, sqlValues)
+      .then((dbRes) => {
+          res.send(dbRes.rows[0])
+      })
+      .catch((dbError) => {
+          console.log('Error in idOfVolunteerToGet GET route', dbError)
+          res.sendStatus(500);
+      })
+})
 
-// , $11, $12, $13, $14
 
-
+//PUT Route
+router.put('id:', (req, res) => {
+  const idToUpdate = req.params.id;
+  const sqlText = 
+  `
+  UPDATE volunteer_profiles
+      SET
+      WHERE
+  `;
+})
 module.exports = router;

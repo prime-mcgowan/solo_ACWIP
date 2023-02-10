@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import React from 'react';
 
 
+import VolunteerForm from '../VolunteerForm/VolunteerForm';
+
 function VolunteerPortalPage() {
 
     const [toDo, setToDo] = useState('');
@@ -15,7 +17,7 @@ function VolunteerPortalPage() {
 
 
 
-
+    const history = useHistory();
     const dispatch = useDispatch();
     
 
@@ -59,11 +61,10 @@ function VolunteerPortalPage() {
     }
 
 
-
     return (
         <>
            
-           {/* To-Do Tracker */}
+           {/* Start To-Do Tracker */}
             <div className="container">
                 <div className="row">
                     <div className='col-6'>To-Do Tracker</div>
@@ -84,10 +85,10 @@ function VolunteerPortalPage() {
                     </div>
                 </div>
             </div>    
-            {/* end To-Do Tracker Container */}
+            {/* End To-Do Tracker Container */}
             
            
-           {/* Contact Corner */}
+           {/* Start Contact Corner */}
             <div className="Contact Corner container">
                     <div className="row">
                         <div className='col-6'>Contact Corner</div>
@@ -105,13 +106,14 @@ function VolunteerPortalPage() {
                 <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button" onClick={handleNewLetterSubmission} >SEND</button></div>
 
             </div>
-            {/* end Contact Corner Container */}
+            {/* End Contact Corner Container */}
 
 
-
-
-
-
+            {/* Start Edit Volunteer Profile */}
+            <div className="row mt-3"></div>
+                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button" onClick={() => history.push('/editVolunteerProfile')}>Edit Profile</button></div>
+            {/* End Edit Volunteer Profile */}
+        
 
 
 
@@ -120,6 +122,7 @@ function VolunteerPortalPage() {
         </>//end fragment
     )//end return    
 }//end VolunteerPortalpage function
+
 
 
 

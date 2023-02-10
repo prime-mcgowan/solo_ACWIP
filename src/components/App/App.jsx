@@ -24,6 +24,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import GetInvolvedPage from '../GetInvolvedPage/GetInvolvedPage';
 import VolunteerForm from '../VolunteerForm/VolunteerForm';
 import VolunteerPortalPage from '../VolunteerPortalPage/VolunteerPortalPage';
+import EditVolunteerProfile from '../VolunteerForm/EditVolunteerProfile';
 
 // Images in React App
 import 'holderjs';
@@ -70,7 +71,12 @@ function App() {
  {/* VolunteerPortalPage */}
           <Route exact path="/volunteerPortalPage">
               <VolunteerPortalPage />
-          </Route>         
+          </Route>    
+
+{/* EditVolunteerProfile */}
+<Route exact path="/editVolunteerProfile">
+              <EditVolunteerProfile />
+          </Route>              
 
 
 

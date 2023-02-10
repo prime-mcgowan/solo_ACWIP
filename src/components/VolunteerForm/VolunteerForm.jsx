@@ -174,10 +174,6 @@ function VolunteerForm() {
             {/* Submit Button */}
                 <div className="row mt-3"></div>
                 <div className="mt-5 text-center"><button  onClick={handleVolunteerProfileSubmission} className="btn btn-primary profile-button" type="button">SUBMIT</button></div>
-
-                <div className="row mt-3"></div>
-                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button">DELETE</button></div>
-            
             
             
             
