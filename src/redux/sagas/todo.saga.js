@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
-function* portalSagas() {
+function* toDoSaga() {
     yield takeEvery('SAGA/CREATE_NEW_TO_DO', createToDo);
 }
 
@@ -12,7 +12,7 @@ function* createToDo(action) {
 
         const response = yield axios({
             method: 'POST',
-            url: '/portal',
+            url: '/todo',
             data: toDo
         });
     } catch(error) {
@@ -22,4 +22,4 @@ function* createToDo(action) {
 
 
 
-export default portalSagas;
+export default toDoSaga;
