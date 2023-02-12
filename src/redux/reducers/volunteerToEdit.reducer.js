@@ -31,6 +31,8 @@ const volunteerToEdit = (state = {}, action) => {
         return{...state, is_operation_holidays: action.payload}
     } else if (action.type === 'EDIT_IS_GET_ON_THE_BUS') {
         return{...state, is_get_on_the_bus: action.payload}
+    } else if (action.type === 'EDIT_BIO_RESPONSE') {
+        return{...state, bio_response: action.payload}
     } 
     return state;
 }

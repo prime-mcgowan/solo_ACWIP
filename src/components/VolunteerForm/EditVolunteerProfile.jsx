@@ -4,10 +4,12 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+
 function EditVolunteerProfile() {
 
 
 const dispatch = useDispatch();
+const history = useHistory();
 
 const volunteerToEdit = useSelector((store) => store.volunteerToEdit)
 
@@ -18,6 +20,15 @@ useEffect(() => {
 }, [])
 
 console.log(volunteerToEdit)
+
+const handleUpdateVolunteerProfile = (event) => {
+    event.preventDefault();
+        dispatch({
+            type: 'UPDATE_VOLUNTEER_PROFILE',
+            payload: volunteerToEdit
+        })
+        // history.push('/volunteerPortalPage')
+}
 
 return (
     <>
@@ -146,6 +157,7 @@ return (
         </div> {/* Closes: phone, email, birthday, address inputs */}
         
 
+          {/* Start of Volunteer Opportunities checkbox section */}
                     <input className="form-control" 
                         type="text" 
                         value="Please check the volunteer program(s) you would like to be a part of:" 
@@ -204,6 +216,79 @@ return (
                             htmlFor="flexCheckDefault">Get on the bus!!
                         </label>
                 </div>
+            {/* End of Volunteer Opportunities checkbox section */}
+
+
+        {/* Start of Bio Response section */}
+            <div className="mb-3">
+                    <label 
+                        htmlFor="exampleFormControlTextarea1" 
+                        className="form-label">Tell us a little bit about yourself. Please type your response below.
+                    </label>
+                    <textarea
+                        className="form-control" 
+                        id="exampleFormControlTextarea1" 
+                        value={volunteerToEdit.bio_response} 
+                        onChange={(event) => dispatch({type: 'EDIT_BIO_RESPONSE',payload: event.target.value})}></textarea>
+            </div>
+
+                    <button 
+                        type="button" 
+                        className="btn btn-primary" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#exampleModal">Helpful Writing Prompts
+                    </button>
+
+        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 
+                            className="modal-title" 
+                            id="exampleModalLabel">Helpful Writing Prompts
+                        </h5>
+                        <button 
+                            type="button" 
+                            className="btn-close" 
+                            data-bs-dismiss="modal" 
+                            aria-label="Close">
+                        </button>
+                    </div>
+
+                    <div className="modal-body">
+                            Please tell us a little bit about yourself.<br></br>
+                            Below are a few prompts to help you get started:<br></br>
+                            * Tell us about your family and what you do for work.<br></br>
+                            * Why did you decide to volunteer with ACWIP?<br></br>
+                            * What are some of your hobbies?<br></br>
+                            * What is one of your favorite quotes and what does it mean to you?<br></br>
+                            * If you could learn to do anything, what would it be?<br></br>
+                            * If you could be any fictional character, who would you choose and why?
+                    </div>
+
+
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+            {/* Submit Button */}
+                <div className="row mt-3"></div>
+                <div className="mt-5 text-center">
+                    <button  
+                         onClick={handleUpdateVolunteerProfile} 
+                        className="btn btn-primary profile-button" 
+                        type="button">UPDATE
+                    </button>
+                </div>
+
+
+
 
 
 </div>

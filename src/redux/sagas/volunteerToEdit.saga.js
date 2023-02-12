@@ -4,8 +4,9 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 //Profile rootSaga
 function* editVolunteerProfileSaga() {
-    yield takeEvery('FETCH_VOLUNTEER_TO_EDIT', fetchVolunteerToEdit)
-}
+    yield takeEvery('FETCH_VOLUNTEER_TO_EDIT', fetchVolunteerToEdit);
+    yield takeEvery('UPDATE_VOLUNTEER_PROFILE', updateVolunteerProfile)
+}   
 
 
 
@@ -22,6 +23,16 @@ function* fetchVolunteerToEdit(action) {
     })
 }
 
+
+//
+function* updateVolunteerProfile(action) {
+    const updatedVolunteer = action.payload
+    yield axios({
+        method: 'PUT',
+        url: '/profile',
+        data: updatedVolunteer
+    })
+}
 
 
 export default editVolunteerProfileSaga;

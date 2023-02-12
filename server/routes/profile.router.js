@@ -91,13 +91,74 @@ router.get('/', (req,res) => {
 
 
 //PUT Route
-router.put('id:', (req, res) => {
-  const idToUpdate = req.params.id;
-  const sqlText = 
+router.put('/', (req, res) => {
+  const idToUpdate = req.user.id;
+  const sqlQuery = 
   `
   UPDATE volunteer_profiles
       SET
-      WHERE
+        first_name=$1,
+      WHERE 
+        id=$2
   `;
+  pool.query(sqlQuery, [req.body.first_name, idToUpdate])
+    .then((result) => {
+        res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log(`Error updating volunteer profile database ${sqlQuery}`)
+      res.sendStatus(500);
+    });
 })
 module.exports = router;
+
+
+ // "last_name"=$2
+        // "email"
+        // "birthday"
+        // "address"
+        // "apt_suite_number",
+        // "city"
+        // "state"
+        // "zip_code"
+        // "is_monday_mailers"
+        // "is_penpal_program"
+        // "is_operation_holidays",
+        // "is_get_on_the_bus"
+        // "bio_response"
+        // "user_id"
+
+
+
+        // email=$3,
+        // birthday=$4, 
+        // address=$5,
+        // apt_suite_number=$6,
+        // city=$7,
+        // state=$8,
+        // zip_code=$9,
+
+
+        // is_monday_mailers=$10,
+        // is_penpal_program=$11,
+        // is_opearation_holidays=$12, 
+        // is_get_on_the_bus=$13,
+
+        // req.body.email,
+        // req.body.birthday, 
+        // req.body.address,
+        // req.body.apt_suite_number,
+        // req.body.city,
+        // req.body.state,
+        // req.body.zip_code, 
+        
+
+
+
+
+
+
+        // req.body.is_monday_mailers,
+      //   req.body.is_penpal_program,
+      // req.body.is_operation_holidays, 
+      // req.body.is_get_on_the_bus, 
