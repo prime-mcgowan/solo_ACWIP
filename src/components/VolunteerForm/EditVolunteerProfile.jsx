@@ -153,6 +153,57 @@ return (
                         readOnly
                     />
 
+                <div className="form-check">
+                        <input 
+                            className="form-check-input" 
+                            type="checkbox" 
+                            checked={volunteerToEdit.is_monday_mailers || ""} 
+                            onChange={(event) => dispatch({type:'EDIT_IS_MONDAY_MAILERS', payload: event.target.checked})} 
+                            id="flexCheckDefault"/>
+                        <label 
+                            className="form-check-label" 
+                            htmlFor="flexCheckDefault">Monday Mailers
+                        </label>
+                </div>
+
+                <div className="form-check">
+                        <input 
+                            className="form-check-input" 
+                            type="checkbox" 
+                            checked={volunteerToEdit.is_penpal_program || ""} 
+                            onChange={(event) => dispatch({type:'EDIT_IS_PENPAL_PROGRAM', payload: event.target.checked})} 
+                            id="flexCheckDefault"/>
+                        <label 
+                            className="form-check-label" 
+                            htmlFor="flexCheckDefault">Penpal Program
+                        </label>
+                </div>
+
+                <div className="form-check">
+                        <input 
+                            className="form-check-input" 
+                            type="checkbox" 
+                            checked={volunteerToEdit.is_operation_holidays || ""} 
+                            onChange={(event) => dispatch({type:'EDIT_IS_OPERATION_HOLIDAYS', payload: event.target.checked})} 
+                            id="flexCheckDefault"/>
+                        <label 
+                            className="form-check-label" 
+                            htmlFor="flexCheckDefault">Opeartion Holidays
+                        </label>
+                </div>
+
+                <div className="form-check">
+                        <input 
+                            className="form-check-input" 
+                            type="checkbox" 
+                            checked={volunteerToEdit.is_get_on_the_bus || ""} 
+                            onChange={(event) => dispatch({type:'EDIT_IS_GET_ON_THE_BUS', payload: event.target.checked})} 
+                            id="flexCheckDefault"/>
+                        <label 
+                            className="form-check-label" 
+                            htmlFor="flexCheckDefault">Get on the bus!!
+                        </label>
+                </div>
 
 
 </div>

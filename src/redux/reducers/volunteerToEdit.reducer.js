@@ -21,9 +21,17 @@ const volunteerToEdit = (state = {}, action) => {
         return{...state, city: action.payload}
     } else if (action.type === 'EDIT_STATE') {
         return{...state, state: action.payload}
-    } else if (action.type === 'ZIP_CODE') {
+    } else if (action.type === 'EDIT_ZIP_CODE') {
         return{...state, zip_code: action.payload}
-    }
+    } else if (action.type === 'EDIT_IS_MONDAY_MAILERS') {
+        return{...state, is_monday_mailers: action.payload}
+    } else if (action.type === 'EDIT_IS_PENPAL_PROGRAM') {
+        return{...state, is_penpal_program: action.payload}
+    } else if (action.type === 'EDIT_IS_OPERATION_HOLIDAYS') {
+        return{...state, is_operation_holidays: action.payload}
+    } else if (action.type === 'EDIT_IS_GET_ON_THE_BUS') {
+        return{...state, is_get_on_the_bus: action.payload}
+    } 
     return state;
 }
 
