@@ -1,5 +1,5 @@
 
-
+// if (action.type === 'SET_VOLUNTEER_TO_EDIT')
 
 //Profile Edit Reducer ***reducer has to be put in the store***
 const volunteerToEdit = (state = {}, action) => {

@@ -93,6 +93,7 @@ router.get('/', (req,res) => {
 //PUT Route
 router.put('/', (req, res) => {
   const idToUpdate = req.user.id;
+  console.log(req.body);
   const sqlQuery = 
   `
   UPDATE volunteer_profiles
@@ -110,10 +111,8 @@ router.put('/', (req, res) => {
         is_penpal_program=$11,
         is_operation_holidays=$12,
         is_get_on_the_bus=$13,
-        bio_response=$14
-        
-        
-      WHERE id=$15
+        bio_response=$14 
+      WHERE user_id=$15
   `;
   pool.query(sqlQuery, [req.body.first_name,req.body.last_name, req.body.email,
             req.body.birthday,req.body.address, req.body.apt_suite_number, req.body.city,
@@ -127,5 +126,33 @@ router.put('/', (req, res) => {
       console.log(`Error updating volunteer profile database ${sqlQuery}`)
       res.sendStatus(500);
     });
-})
+})//end PUT Route
+
+
+//DELETE Route
+router.delete('/', (req, res) => {
+  const sqlValue = [req.user.id];
+  const sqlQuery = 
+  `
+  DELETE FROM "user"
+    WHERE "id"=$1;
+  `;
+  pool.query(sqlQuery, sqlValue)
+    .then(() => (res.sendStatus(200)))
+    .catch((error) => {
+      console.log('Volunteer Profile DELETE route failed', error);
+    });
+});//end DELETE Route
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;

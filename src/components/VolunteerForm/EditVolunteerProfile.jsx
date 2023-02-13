@@ -11,7 +11,8 @@ function EditVolunteerProfile() {
 const dispatch = useDispatch();
 const history = useHistory();
 
-const volunteerToEdit = useSelector((store) => store.volunteerToEdit)
+const volunteerToEdit = useSelector((store) => store.volunteerToEdit);
+const volunteerToDelete = useSelector((store) => store.volunteerToDelete)
 
 useEffect(() => {
     dispatch({
@@ -27,8 +28,24 @@ const handleUpdateVolunteerProfile = (event) => {
             type: 'UPDATE_VOLUNTEER_PROFILE',
             payload: volunteerToEdit
         })
-        // history.push('/volunteerPortalPage')
+        history.push('/volunteerPortalPage')
+    }
+
+const handleDeleteVolunteerProfile = (event) => {
+    event.preventDefault();
+        dispatch({
+            type: 'DELETE_VOLUNTEER_PROFILE',
+            payload: volunteerToDelete
+        });
+        history.push('/home')
 }
+
+
+
+
+
+
+
 
 return (
     <>
@@ -287,6 +304,16 @@ return (
                     </button>
                 </div>
 
+                {/* Delete Button */}
+                <div className="row mt-3"></div>
+                <div className="mt-5 text-center">
+                    <button  
+                         onClick={handleDeleteVolunteerProfile} 
+                        className="btn btn-primary profile-button" 
+                        type="button">DELETE
+                    </button>
+                </div>
+
 
 
 
@@ -299,13 +326,5 @@ return (
 </>
 )
 }
-
-
-
-
-
-   
-
-
 
 export default EditVolunteerProfile;
