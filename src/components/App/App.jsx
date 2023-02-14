@@ -25,12 +25,14 @@ import GetInvolvedPage from '../GetInvolvedPage/GetInvolvedPage';
 import VolunteerForm from '../VolunteerForm/VolunteerForm';
 import VolunteerPortalPage from '../VolunteerPortalPage/VolunteerPortalPage';
 import EditVolunteerProfile from '../VolunteerForm/EditVolunteerProfile';
+import PenpalProfiles from '../PenpalProfiles/PenpalProfiles';
 
 // Images in React App
 import 'holderjs';
 
 
 import './App.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -76,6 +78,11 @@ function App() {
 {/* EditVolunteerProfile */}
 <Route exact path="/editVolunteerProfile">
               <EditVolunteerProfile />
+          </Route>   
+
+{/* PenpalProfiles */}
+<Route exact path="/penpalProfiles">
+              <PenpalProfiles />
           </Route>              
 
 

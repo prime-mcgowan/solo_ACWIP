@@ -36,8 +36,8 @@ const handleDeleteVolunteerProfile = (event) => {
         dispatch({
             type: 'DELETE_VOLUNTEER_PROFILE',
             payload: volunteerToDelete
-        });
-        history.push('/home')
+        })
+        history.push('/')
 }
 
 
