@@ -7,6 +7,7 @@ import profileSaga from './profile.saga';
 import toDoSaga from './todo.saga';
 import editVolunteerProfileSaga from './volunteerToEdit.saga';
 import letterSaga from './letter.saga'
+import penpalsSaga from './penpals.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -23,6 +24,8 @@ export default function* rootSaga() {
     profileSaga(),
     toDoSaga(),
     editVolunteerProfileSaga(),
-    letterSaga()
+    letterSaga(),
+    penpalsSaga(),
+    
   ]);
 }

@@ -104,7 +104,14 @@ function VolunteerPortalPage() {
     <i className="fa-solid fa-user fa-5x"></i> 
       {/* <h5 className="card-title">GET AQUAINTED</h5> */}
       <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <a href="#" className="btn btn-primary">See Possible Penpals</a>
+      <div className="mt-5 text-center">
+        <button 
+            className="btn btn-primary profile-button" 
+            type="button" 
+            onClick={() => history.push('/penpalProfiles')}>Penpal Profiles
+        </button>
+        </div>
+
     </div>
   </div>
   <div className="card">

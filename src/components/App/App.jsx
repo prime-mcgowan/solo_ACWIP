@@ -25,7 +25,8 @@ import GetInvolvedPage from '../GetInvolvedPage/GetInvolvedPage';
 import VolunteerForm from '../VolunteerForm/VolunteerForm';
 import VolunteerPortalPage from '../VolunteerPortalPage/VolunteerPortalPage';
 import EditVolunteerProfile from '../VolunteerForm/EditVolunteerProfile';
-import PenpalProfiles from '../PenpalProfiles/PenpalProfiles';
+import PenpalProfiles from '../PenpalProgram/PenpalProfiles';
+import PenpalMatch from '../PenpalProgram/PenpalMatch';
 
 // Images in React App
 import 'holderjs';
@@ -85,6 +86,10 @@ function App() {
               <PenpalProfiles />
           </Route>              
 
+{/* PenpalMatch */}
+{/* <Route exact path="/penpalMatch">
+              <PenpalMatch />
+          </Route>             */}
 
 
 
