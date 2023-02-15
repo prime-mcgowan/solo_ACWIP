@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 
 import Card from 'react-bootstrap/Card';
@@ -17,7 +18,7 @@ import penpalsSaga from '../../redux/sagas/penpals.saga';
       const history = useHistory();
 
       const user = useSelector(store => store.user);
-      const penpal = useSelector(store => store.penpal)
+      const penpals = useSelector(store => store.penpal);
 
       useEffect(() => {
         dispatch({
@@ -26,40 +27,48 @@ import penpalsSaga from '../../redux/sagas/penpals.saga';
       }, [])
 
     
-      const handleItsAMatchButton = (event) => {
-        event.preventDefault();
-
+      const handleItsAMatchButton = (id, name, bio_response) => {
+       
       let newMatch = {
         user_id:user.id,
-        penpal_id:penpal.penpal_id
+        penpal_id:id,
+        name:name,
+        bio_response:bio_response
       }
 
-      console.log('This is a new penpal match', new)
+      console.log('This is a new penpal match', newMatch)
       
 
         dispatch({
           type: 'SAGA/CREATE_NEW_PENPAL_MATCH',
-          payload: {
-           newMatch
-          }
+          payload: newMatch
+          
         })
         history.push('/volunteerPortalPage');
       }
+
+      // dispatch({
+      //   type:'FETCH_PENPAL_DETAILS,
+      // })
 
       return (
         <>
           <h2>Penpals:</h2>
           <ul>
-            {penpal.map((penpal, id) => {
+            {penpals.map((penpal) => {
               return <li
-                key={id}>
+                key={penpal.penpal_id}>
                   {penpal.name}
                   {penpal.bio_response}
+                  {/* <button onClick={handleItsAMatchButton}>It's a match!</button> */}
+
+                  <button onClick={() => {handleItsAMatchButton(penpal.penpal_id, penpal.name, penpal.bio_response)}}>It's a match!</button>
                 </li>
             })
           }
           </ul>
-          <button onClick={handleItsAMatchButton}>It's a match!</button>
+          
+          {/* <button onClick={handleItsAMatchButton}>It's a match!</button> */}
         </>
       )//closing for return
     }//end of GetInvolvedFunction

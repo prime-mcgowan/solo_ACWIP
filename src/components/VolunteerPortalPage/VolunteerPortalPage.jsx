@@ -9,6 +9,13 @@ import VolunteerForm from '../VolunteerForm/VolunteerForm';
 
 function VolunteerPortalPage() {
 
+    //saga get
+    //router get
+    //reducer to hold data
+    //bring over volunteers_penpals store
+    //useEffect w/ dispatch to Fetch volunteer and penpal data
+    //map through the data and render on page
+
     const [toDo, setToDo] = useState('');
     const [to, setTo] = useState('');
     const [from, setFrom] = useState('');
