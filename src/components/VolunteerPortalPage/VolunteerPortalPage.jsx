@@ -1,4 +1,4 @@
-import {  useDispatch } from 'react-redux';
+import {  useDispatch, useSelector } from 'react-redux';
 import {  useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
@@ -27,6 +27,9 @@ function VolunteerPortalPage() {
 
     const history = useHistory();
     const dispatch = useDispatch();
+
+    const penpalMatches = useSelector(store => store.penpalMatch);
+
     
 
     const handleToDoSubmission = (event) => {

@@ -24,25 +24,43 @@ router.get('/', (req, res) => {
 });
 
 
+router.get('/', (req, res) => {
+    console.log('in penpals.router GET for matched penpal details')
+
+    const sqlQuery = 
+    `
+    SELECT "name", "bio_response"
+    FROM "volunteers_penpals"
+	    WHERE "user_id"=$1
+    `;
+    pool.query(sqlQuery)
+        .then(dbRes => {
+            res.send(dbRes.rows)
+        })
+        .catch(dbErr => {
+            console.log('penpals.router GET Route for penpal details failed', dbErr)
+        })
+})
+
 //Looked at: bikes router
-router.get('/:id', (req, res) => {
-        const penpalId = req.params.penpal_id
-        console.log('GET request for penpal id', penpalId)
-        const sqlQuery = 
-        `   	
-        SELECT * FROM "penpals"
-        WHERE "penpal_id"=$1;
-        `;
-        const sqlValues = [penpalId]
-        pool.query(sqlQuery, sqlValues)
-            .then(dbRes => {
-                res.send(dbRes.rows[0])
-            })
-            .catch((error) => {
-                console.log('GET Route for ONE penpal_id failed', error);
-                res.sendStatus(500);
-            });
-    });
+// router.get('/:id', (req, res) => {
+//         const penpalId = req.params.penpal_id
+//         console.log('GET request for penpal id', penpalId)
+//         const sqlQuery = 
+//         `   	
+//         SELECT * FROM "penpals"
+//         WHERE "penpal_id"=$1;
+//         `;
+//         const sqlValues = [penpalId]
+//         pool.query(sqlQuery, sqlValues)
+//             .then(dbRes => {
+//                 res.send(dbRes.rows[0])
+//             })
+//             .catch((error) => {
+//                 console.log('GET Route for ONE penpal_id failed', error);
+//                 res.sendStatus(500);
+//             });
+//     });
 
 /**
  * POST route template
