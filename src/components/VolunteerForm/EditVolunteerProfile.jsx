@@ -28,7 +28,7 @@ const handleUpdateVolunteerProfile = (event) => {
             type: 'UPDATE_VOLUNTEER_PROFILE',
             payload: volunteerToEdit
         })
-        history.push('/volunteerPortalPage')
+        history.push('/user')
     }
 
 const handleDeleteVolunteerProfile = (event) => {

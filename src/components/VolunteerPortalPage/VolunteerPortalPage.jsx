@@ -10,14 +10,6 @@ import penpal from '../../redux/reducers/penpal.reducer';
 
 function VolunteerPortalPage() {
 
-    //saga get
-    //router get
-    //reducer to hold data
-    //bring over volunteers_penpals store
-    //useEffect w/ dispatch to Fetch volunteer and penpal data
-    //map through the data and render on page
-
-    const [toDo, setToDo] = useState('');
     const [to, setTo] = useState('');
     const [from, setFrom] = useState('');
     const [date, setDate] = useState('');
@@ -40,22 +32,7 @@ function VolunteerPortalPage() {
         })
     }, [])
 
-    // const handleToDoSubmission = (event) => {
-    //     event.preventDefault();
-    //     console.log(toDo);
-
-        
-
-    //     dispatch({
-    //         type: 'SAGA/CREATE_NEW_TO_DO', 
-    //         payload: {
-    //             toDo:toDo
-    //         }
-    //     })
-    //     setToDo('');
-    // }//end handleToDoSumbission
-
-
+   
     const handleNewLetterSubmission = (event) => {
         event.preventDefault();
 
@@ -82,19 +59,129 @@ function VolunteerPortalPage() {
 
     return (
         <>
+    
+            <div className="card-group"> 
 
-       
-        {/* <ul>
-            {details.map((detail) => (
-               
-                    <PenpalItem key={penpal.id}
-                                penpal={name}
-                                penpal={bio_response} />
-                    
-            ))}
-        </ul>
-            */}
-           {/* Start To-Do Tracker */}
+                {/* Penpal Profiles Card */}
+                <div className="card border-primary mb-3">
+                    <div className="card-body text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                            width="150" 
+                            height="150" 
+                            fill="currentColor" 
+                            className="bi bi-person-vcard"
+                            viewBox="0 0 16 16">
+                            <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
+                            <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
+                        </svg>
+
+                    <div className="mt-5 text-center">
+                        <button 
+                            className="btn btn-primary profile-button" 
+                            type="button" 
+                            onClick={() => history.push('/penpalProfiles')}>Penpal Profiles
+                        </button>
+                    </div>
+                 </div>
+                </div> 
+                {/* End Penpals Profiles Card */}
+
+
+   
+                <div className="card border-primary mb-3 style={{  }}">
+                    <div className="card-body">
+                        <h2>My Penpal:</h2>
+                            <h3>{details.name}</h3>
+                            <p>{details.bio_response}</p>
+                    </div>
+                </div>
+
+            
+
+
+                 {/* Writing Tips Card */}
+                <div className="card border-primary mb-3">
+                    <div className="card-body text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                            width="150" 
+                            height="150" 
+                            fill="currentColor" 
+                            className="bi bi-pencil-square" 
+                            viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                            <path fillRule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                        </svg>
+                        <div className="mt-5 text-center"></div>
+                            <button 
+                                className="btn btn-primary profile-button" 
+                                onClick={() => history.push('/writingTips')}>Writing Tips
+                            </button>
+                        </div>
+                    </div> {/* End WritingTips Card */} 
+                </div>
+
+
+                
+
+           {/* Start Write your penpal */}
+            <div className="container">
+                    <div className="row">
+                        <div className='col-6'>Write to your penpal below:</div>
+                    </div>
+            
+                <div className="mb-3">
+                    <input type="text" className="form-control mt-3" id="exampleFormControlInput1" placeholder="To" value={to} onChange={(event) => setTo(event.target.value)}/>
+                    <input type="text" className="form-control mt-3" id="exampleFormControlInput1" placeholder="From" value={from} onChange={(event) => setFrom(event.target.value)}/>
+                    <input type="date" className="form-control mt-3" id="exampleFormControlInput1" placeholder="Date" value={date} onChange={(event) => setDate(event.target.value)}/>
+                    <input type="text" className="form-control mt-3" id="exampleFormControlInput1" placeholder="Subject" value={subject} onChange={(event) => setSubject(event.target.value)}/>
+                    <textarea className="form-control mt-3" id="exampleFormControlTextarea1" placeholder="Type your letter here" rows="3" value={letterContents} onChange={(event) => setLetterContents(event.target.value)}></textarea>
+                </div>
+                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button" onClick={handleNewLetterSubmission} >SEND</button></div>
+            </div>{/* End Contact Corner Container */}
+
+
+            {/* Start Edit Volunteer Profile Button */}
+            <div className="row mt-3"></div>
+                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button" onClick={() => history.push('/editVolunteerProfile')}>Edit My Volunteer Profile</button></div>
+            {/* End Edit Volunteer Profile Button */}
+        
+
+
+
+            
+        
+        </>//end fragment
+    )//end return    
+}//end VolunteerPortalpage function
+
+
+
+
+
+
+
+export default VolunteerPortalPage;
+
+
+
+// const [toDo, setToDo] = useState('');
+
+ // const handleToDoSubmission = (event) => {
+    //     event.preventDefault();
+    //     console.log(toDo);
+
+        
+
+    //     dispatch({
+    //         type: 'SAGA/CREATE_NEW_TO_DO', 
+    //         payload: {
+    //             toDo:toDo
+    //         }
+    //     })
+    //     setToDo('');
+    // }//end handleToDoSumbission
+
+ {/* Start To-Do Tracker */}
             {/* <div className="container">
                 <div className="row">
                     <div className='col-6'>To-Do Tracker</div>
@@ -116,133 +203,3 @@ function VolunteerPortalPage() {
                 </div>
             </div>     */}
             {/* End To-Do Tracker Container */}
-            
-            <div className="card-group"> 
-   
-            <div className="card">
-  {/* <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
-  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-</svg> */}
-    {/* <img src="./images/lamp.png" className="card-img-top" alt="..."/> */}
-    <div className="card-body">
-
-    <h2>My Penpal:</h2>
-        <h3>{details.name}</h3>
-        <p>{details.bio_response}</p>
-       
-      {/* <h5 className="card-title">GET INFORMED</h5> */}
-      {/* <p className="card-text">Writing Tips</p> */}
-    </div>
-  </div>
-
-
-
-
-           
-  <div className="card">
- 
-    {/* <img src="./images/love.png"className="card-img-top" alt="..."/> */}
-    {/* <FontAwesomeIcon icon={icon({name: 'coffee', style: 'solid'})} /> */}
-    <div className="card-body">
-    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" className="bi bi-person-vcard" viewBox="0 0 16 16">
-  <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
-  <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
-</svg>
-
-
-
-      {/* <h5 className="card-title">GET AQUAINTED</h5> */}
-      {/* <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
-      <div className="mt-5 text-center">
-        <button 
-            className="btn btn-primary profile-button" 
-            type="button" 
-            onClick={() => history.push('/penpalProfiles')}>Penpal Profiles
-        </button>
-        </div>
-
-    </div>
-  </div>
-  <div className="card">
-  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
-  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-  <path fillRule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-</svg>
-    {/* <img src="./images/lamp.png" className="card-img-top" alt="..."/> */}
-    <div className="card-body">
-      {/* <h5 className="card-title">GET INFORMED</h5> */}
-      {/* <p className="card-text">Writing Tips</p> */}
-      <button className="btn btn-primary" 
-      onClick={() => history.push('/writingTips')}>Writing Tips</button>
-    </div>
-  </div>
-
-  {/* <div className="card"> */}
-  {/* <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" className="bi bi-check-square" viewBox="0 0 16 16">
-  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-  <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
-</svg> */}
-    {/* <img src="./images/energy.png" className="card-img-top" alt="..."/> */}
-    {/* <div className="card-body">
-      {/* <h5 className="card-title">GET INVOLVED</h5> */}
-      {/* <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p> */}
-      {/* <a href="#" className="btn btn-primary">Documents & Training</a> */}
-    {/* </div>  */}
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-           {/* Start Contact Corner */}
-            <div className="Contact Corner container">
-                    <div className="row">
-                        <div className='col-6'>Contact Corner</div>
-                    </div>
-            
-                <div className="mb-3">
-                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="To" value={to} onChange={(event) => setTo(event.target.value)}/>
-                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="From" value={from} onChange={(event) => setFrom(event.target.value)}/>
-                    <input type="date" className="form-control" id="exampleFormControlInput1" placeholder="Date" value={date} onChange={(event) => setDate(event.target.value)}/>
-
-                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Subject" value={subject} onChange={(event) => setSubject(event.target.value)}/>
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" value={letterContents} onChange={(event) => setLetterContents(event.target.value)}></textarea>
-                </div>
-
-                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button" onClick={handleNewLetterSubmission} >SEND</button></div>
-
-            </div>
-            {/* End Contact Corner Container */}
-
-
-            {/* Start Edit Volunteer Profile */}
-            <div className="row mt-3"></div>
-                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button" onClick={() => history.push('/editVolunteerProfile')}>Edit Profile</button></div>
-            {/* End Edit Volunteer Profile */}
-        
-
-
-
-            
-        
-        </>//end fragment
-    )//end return    
-}//end VolunteerPortalpage function
-
-
-
-
-
-
-
-export default VolunteerPortalPage;
-
-

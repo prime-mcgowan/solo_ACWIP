@@ -53,22 +53,21 @@ import penpalsSaga from '../../redux/sagas/penpals.saga';
 
       return (
         <>
-          <h2>Penpals:</h2>
-          <ul>
-            {penpals.map((penpal) => {
-              return <li
-                key={penpal.penpal_id}>
-                  {penpal.name}
-                  {penpal.bio_response}
-                  {/* <button onClick={handleItsAMatchButton}>It's a match!</button> */}
+          <h2>Prospective Penpals:</h2>
 
-                  <button onClick={() => {handleItsAMatchButton(penpal.penpal_id, penpal.name, penpal.bio_response)}}>It's a match!</button>
-                </li>
-            })
-          }
-          </ul>
-          
-          {/* <button onClick={handleItsAMatchButton}>It's a match!</button> */}
+          <div className="penpalList">
+               <ul>
+                  {penpals.map((penpal) => {
+                    return <li
+                      key={penpal.penpal_id}>
+                          {penpal.name}
+                          {penpal.bio_response}
+                      <button onClick={() => {handleItsAMatchButton(penpal.penpal_id, penpal.name, penpal.bio_response)}}>It's a match!</button>
+                    </li>
+                  })
+                }
+              </ul>
+          </div>  
         </>
       )//closing for return
     }//end of GetInvolvedFunction
@@ -181,3 +180,41 @@ import penpalsSaga from '../../redux/sagas/penpals.saga';
    
    
 //                </div>//closing tag for className="container
+
+
+// <div className="container"> 
+
+// <div className="card mb-3">
+//     <div className="row g-0">
+
+//         <div className="col-md-2">
+//             <svg xmlns="http://www.w3.org/2000/svg" 
+//                 width="100" height="100" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+//                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+//                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+//             </svg>
+//         </div>
+
+//         <div className="col-md-8">
+//             <div className="card-body">
+//             <ul>
+// {penpals.map((penpal) => {
+// return <li
+// key={penpal.penpal_id}>
+//   {penpal.name}
+//   {penpal.bio_response}
+//   {/* <button onClick={handleItsAMatchButton}>It's a match!</button> */}
+
+//   <button onClick={() => {handleItsAMatchButton(penpal.penpal_id, penpal.name, penpal.bio_response)}}>It's a match!</button>
+// </li>
+// })
+// }
+// </ul>
+
+//                 <h5 className="card-title">Roseanna</h5>
+//                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+//         </div>
+//     </div>
+// </div>
+// </div>   
+// </div>
