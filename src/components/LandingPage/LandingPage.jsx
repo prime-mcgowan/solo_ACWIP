@@ -58,7 +58,9 @@ function LandingPage() {
     <div className="card-body">
       {/* <h5 className="card-title">GET AQUAINTED</h5> */}
       <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <a href="#" className="btn btn-primary">GET AQUAINTED</a>
+      {/* <a href="#" className="btn btn-primary">GET AQUAINTED</a> */}
+      <button className="btn btn-primary profile-button" type="button" 
+      onClick={() => history.push('/getAquainted')}>GET AQUAINTED</button>
     </div>
   </div>
   <div className="card">
@@ -66,7 +68,9 @@ function LandingPage() {
     <div className="card-body">
       {/* <h5 className="card-title">GET INFORMED</h5> */}
       <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" className="btn btn-primary">GET INFORMED</a>
+      <button className="btn btn-primary profile-button" type="button" 
+      onClick={() => history.push('/getInformedPage')}>GET INFORMED</button>
+      {/* <a href="#" className="btn btn-primary">GET INFORMED</a> */}
     </div>
   </div>
   <div className="card">
@@ -74,7 +78,9 @@ function LandingPage() {
     <div className="card-body">
       {/* <h5 className="card-title">GET INVOLVED</h5> */}
       <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <a href="#" className="btn btn-primary">GET INVOLVED</a>
+      {/* <a href="#" className="btn btn-primary" type="button"  onClick={() => history.push('/getInvolvedPage')}>GET INVOLVED</a> */}
+      <button className="btn btn-primary profile-button" type="button" 
+      onClick={() => history.push('/getInvolvedPage')}>GET INVOLVED</button>
     </div>
   </div>
 </div>

@@ -23,22 +23,24 @@ router.get('/', (req, res) => {
     })
 });
 
-
-router.get('/', (req, res) => {
-    console.log('in penpals.router GET for matched penpal details')
+//GET Route for just matched penpal details
+router.get('/myPenpal', (req, res) => {
+    const userId = req.user.id;
+    console.log('in penpals.router GET for matched penpal details', userId)
 
     const sqlQuery = 
     `
-    SELECT "name", "bio_response"
-    FROM "volunteers_penpals"
-	    WHERE "user_id"=$1
-    `;
-    pool.query(sqlQuery)
+    SELECT * FROM "volunteers_penpals"
+	    WHERE "user_id"=$1;
+    `
+    const sqlValues = [userId]
+    pool.query(sqlQuery, sqlValues)
         .then(dbRes => {
-            res.send(dbRes.rows)
+            res.send(dbRes.rows[0])
         })
         .catch(dbErr => {
             console.log('penpals.router GET Route for penpal details failed', dbErr)
+            res.sendStatus(500)
         })
 })
 

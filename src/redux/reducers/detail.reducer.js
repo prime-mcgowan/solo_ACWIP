@@ -1,7 +1,7 @@
 
 //Looked at: movie-sagas index.js
 //fetchPenpalIdReducer
-const penpalDetails = (state = [], action) => {
+const detail = (state = [], action) => {
     switch (action.type) {
         case 'SET_PENPAL_DETAILS':
             return action.payload;
@@ -10,4 +10,4 @@ const penpalDetails = (state = [], action) => {
     }
 }
 
-export default penpalDetails;
+export default detail;

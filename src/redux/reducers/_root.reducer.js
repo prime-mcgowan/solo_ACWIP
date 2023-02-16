@@ -3,7 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import volunteerToEdit from './volunteerToEdit.reducer';
 import penpal from './penpal.reducer';
-import penpalDetails from './penpalDetails.reducer';
+import detail from './detail.reducer'
 import penpalMatch from './penpalMatch.reducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -16,8 +16,9 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   volunteerToEdit,
   penpal,
-  penpalDetails,
-  penpalMatch
+ 
+  penpalMatch,
+  detail
 });
 
 export default rootReducer;

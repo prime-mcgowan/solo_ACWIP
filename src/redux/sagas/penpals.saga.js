@@ -41,18 +41,17 @@ function* fetchPenpalMatch() {
 
 //Looked at bikes fetchBikeDetails index.js
 function* fetchPenpalDetails(action) {
-    const penpalId = action.payload;
     try {
-        const penpalDetailsRes = yield axios({
+        const response = yield axios({
             method: 'GET',
-            url:`/penpals/${penpalId}`,
+            url:'/penpals/myPenpal'
         })
         yield put({
             type: 'SET_PENPAL_DETAILS',
-            payload:penpalDetailsRes.data
+            payload:response.data
         })
     }catch(error) {
-        console.log('fetchPenpaDetails SAGA function failed', error)
+        console.log('fetchPenpalDetails SAGA function failed', error)
     }
 }
 
