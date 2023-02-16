@@ -83,10 +83,7 @@ function VolunteerPortalPage() {
     return (
         <>
 
-        <h2>My Penpal:</h2>
-        <p>{details.name}
-        {details.bio_response}
-        </p>
+       
         {/* <ul>
             {details.map((detail) => (
                
@@ -120,14 +117,29 @@ function VolunteerPortalPage() {
             </div>     */}
             {/* End To-Do Tracker Container */}
             
-           
+            <div className="card-group"> 
    
+            <div className="card">
+  {/* <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+</svg> */}
+    {/* <img src="./images/lamp.png" className="card-img-top" alt="..."/> */}
+    <div className="card-body">
+
+    <h2>My Penpal:</h2>
+        <h3>{details.name}</h3>
+        <p>{details.bio_response}</p>
+       
+      {/* <h5 className="card-title">GET INFORMED</h5> */}
+      {/* <p className="card-text">Writing Tips</p> */}
+    </div>
+  </div>
 
 
 
 
-
-            <div className="card-group">
+           
   <div className="card">
  
     {/* <img src="./images/love.png"className="card-img-top" alt="..."/> */}
@@ -155,13 +167,14 @@ function VolunteerPortalPage() {
   <div className="card">
   <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+  <path fillRule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
 </svg>
     {/* <img src="./images/lamp.png" className="card-img-top" alt="..."/> */}
     <div className="card-body">
       {/* <h5 className="card-title">GET INFORMED</h5> */}
       {/* <p className="card-text">Writing Tips</p> */}
-      <a href="#" className="btn btn-primary">Writing Tips</a>
+      <button className="btn btn-primary" 
+      onClick={() => history.push('/writingTips')}>Writing Tips</button>
     </div>
   </div>
 

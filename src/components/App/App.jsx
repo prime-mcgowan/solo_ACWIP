@@ -29,6 +29,7 @@ import PenpalProfiles from '../PenpalProgram/PenpalProfiles';
 import PenpalMatch from '../PenpalProgram/PenpalMatch';
 import GetAquainted from '../GetAquainted/GetAquainted';
 import GetInformedPage from '../GetInformed/GetInformedPage';
+import WritingTips from '../VolunteerPortalPage/WritingTips';
 
 // import PenpalDetails from '../PenpalProgram/PenpalDetails';
 // import PenpalItem from '../PenpalProgram/PenpalItem';
@@ -101,6 +102,11 @@ function App() {
 <Route exact path="/penpalProfiles">
               <PenpalProfiles />
           </Route>              
+
+{/* WritingTips */}
+<Route exact path="/writingTips">
+              <WritingTips />
+          </Route>  
 
 {/* PenpalMatch */}
 {/* <Route exact path="/penpalMatch">
