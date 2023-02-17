@@ -2,16 +2,25 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './LandingPage.css';
 
+
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
 //Styling from: https://react-bootstrap.netlify.app/
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import { flexbox } from '@mui/system';
 
 function LandingPage() {
   const [heading, setHeading] = useState();
   const history = useHistory();
+
+  const styles = {
+    padding: {
+      paddingTop: "20px",
+      marginTop: "20px"
+    }
+  }
 
   const onLogin = (event) => {
     history.push('/login');
@@ -26,7 +35,7 @@ function LandingPage() {
 {/* Bootstrap Hero Section */}
       <div className="container-fluid px-4 py-5 my-5 text-center">
 	        <div className="lc-block d-block mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" className="bi bi-lightning-charge" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" className="bi bi-lightning-charge" viewBox="0 0 16 16">
                   <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
               </svg>
 		                      {/* <svg xmlns="http://www.w3" viewBox="0 0 496 512" width="5em" height="5em" lc-helper="svg-icon" fill="currentColor">
@@ -37,14 +46,14 @@ function LandingPage() {
 
 	        <div className="lc-block">
 		          <div editable="rich">
-			            <h2 className="display-5 fw-bold">Action Committee for Women in Prison</h2>
+			            <h2 className="display-5 fw-bold" style={{fontSize:100}}>Action Committee for Women in Prison</h2>
               </div>
 	        </div>
 
 
 	        <div className="lc-block col-lg-6 mx-auto mb-4">
 		          <div editable="rich">
-			            <p className="lead ">Advocating for the humane and compassionate treatment of all incarcerated women.</p>
+			            <p className="lead" style={{fontSize:30}}>Advocating for the humane and compassionate treatment of all incarcerated women.</p>
 		          </div>
 	        </div>
 
@@ -54,17 +63,19 @@ function LandingPage() {
 
       <div className="card-group">
   <div className="card">
-    <img src="./images/love.png"className="card-img-top" alt="..."/>
+    <img src="./images/love.png"className="card-img-top" alt="..." style={{height: 200, width: 200, alignSelf: 'center'}}/>
     <div className="card-body">
       {/* <h5 className="card-title">GET AQUAINTED</h5> */}
       <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       {/* <a href="#" className="btn btn-primary">GET AQUAINTED</a> */}
-      <button className="btn btn-primary profile-button" type="button" 
+      <button 
+      className="btn btn-primary profile-button" 
+      type="button" style={{}}
       onClick={() => history.push('/getAquainted')}>GET AQUAINTED</button>
     </div>
   </div>
   <div className="card">
-    <img src="./images/lamp.png" className="card-img-top" alt="..."/>
+    <img src="./images/lamp.png" className="card-img-top" alt="..." style={{height: 200, width: 200, alignSelf: 'center'}}/>
     <div className="card-body">
       {/* <h5 className="card-title">GET INFORMED</h5> */}
       <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -74,13 +85,15 @@ function LandingPage() {
     </div>
   </div>
   <div className="card">
-    <img src="./images/energy.png" className="card-img-top" alt="..."/>
+    <img src="./images/energy.png" className="card-img-top" alt="..." style={{height: 200, width: 200, alignSelf: 'center'}}/>
     <div className="card-body">
       {/* <h5 className="card-title">GET INVOLVED</h5> */}
       <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       {/* <a href="#" className="btn btn-primary" type="button"  onClick={() => history.push('/getInvolvedPage')}>GET INVOLVED</a> */}
       <button className="btn btn-primary profile-button" type="button" 
       onClick={() => history.push('/getInvolvedPage')}>GET INVOLVED</button>
+       <button className="btn btn-primary profile-button" type="button" style={{backgroundColor: '#008183', marginLeft: '.1rem', marginTop:'1rem', alignItems:'center'}}
+      onClick={() => history.push('/getInvolvedPage')}>BECOME A VOLUNTEER</button>
     </div>
   </div>
 </div>
@@ -88,7 +101,7 @@ function LandingPage() {
 
 
 
-<div className="card mb-3" sx={{maxWidth: '540px'}}>
+<div className="card mb-3" sx={{maxWidth: '540px'}} style={styles.padding}>
     <div className="row g-0">
         <div className="col-md-4">
             <img src="./images/Gloria_Killian.jpg" className="img-fluid rounded-start" alt="..."/>
