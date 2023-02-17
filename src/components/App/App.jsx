@@ -83,49 +83,37 @@ function App() {
               <GetInvolvedPage />
           </Route>
 
+
+
+
+
+
+
 {/* VolunteerRegForm */}
-          <Route exact path="/volunteerForm">
+          <ProtectedRoute exact path="/volunteerForm">
               <VolunteerForm />
-          </Route>
+          </ProtectedRoute>
 
  {/* VolunteerPortalPage */}
-          <Route exact path="/volunteerPortalPage">
+ 
+          <ProtectedRoute exact path="/volunteerPortalPage">
               <VolunteerPortalPage />
-          </Route>    
+          </ProtectedRoute>    
 
 {/* EditVolunteerProfile */}
-<Route exact path="/editVolunteerProfile">
+<ProtectedRoute exact path="/editVolunteerProfile">
               <EditVolunteerProfile />
-          </Route>   
+          </ProtectedRoute>   
 
 {/* PenpalProfiles */}
-<Route exact path="/penpalProfiles">
+<ProtectedRoute exact path="/penpalProfiles">
               <PenpalProfiles />
-          </Route>              
+          </ProtectedRoute>              
 
 {/* WritingTips */}
-<Route exact path="/writingTips">
+<ProtectedRoute exact path="/writingTips">
               <WritingTips />
-          </Route>  
-
-{/* PenpalMatch */}
-{/* <Route exact path="/penpalMatch">
-              <PenpalMatch />
-          </Route>             */}
-
-{/* PenpalDetails
-<Route exact path="/penpalDetails">
-              <PenpalDetails />
-          </Route>  
-
-PenpalItem
-<Route exact path="/penpalItem">
-              <PenpalItem />
-          </Route>     */}
-
-    
-
-
+          </ProtectedRoute>  
 
 
           {/* For protected routes, the view could show one of several things on the same route.

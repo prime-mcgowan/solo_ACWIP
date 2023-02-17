@@ -27,9 +27,10 @@ function VolunteerForm() {
     const dispatch = useDispatch();
     const history = useHistory();
 
+
+
     const handleVolunteerProfileSubmission = (event) => {
         event.preventDefault();
-
 
 
         let newVolunteer = {
@@ -60,6 +61,22 @@ function VolunteerForm() {
         history.push('/volunteerPortalPage');// history.push to volunteer portal
     }//end handleVolunteerProfileSubmission 
 
+    const fillTheForm = () => {
+        setFirstName('Laura');
+        setLastName('McGowan'); 
+        // setPhoneNumber
+        setEmail('mcgowanl@gmail.com');
+        setBirthdate("1980-05-29");
+        setAddress('2328 California Street');
+        // setApt_Suite_Number()
+        setCity('Minneapolis');
+        setState('MN');
+        setZipCode('55418');
+        setMondayMailers(true);
+        setPenpalProgram(true);
+        setBioResponse('my bio respnse')
+    }
+
    
     return (
         <>
@@ -81,7 +98,7 @@ function VolunteerForm() {
                 <div className="col-md-5 border-right">
                         <div className="p-3 py-5">
                         <div className="d-flex justify-content-between align-items-center mb-3">
-                        <h4 className="text-right">ACWIP Volunteer Profile</h4>
+                        <h4 onClick={fillTheForm} className="text-right">ACWIP Volunteer Profile</h4>
                 </div>  
                 
 

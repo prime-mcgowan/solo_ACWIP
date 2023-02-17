@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
     newVolunteer.email, 
     newVolunteer.birthdate, 
     newVolunteer.address, 
-    newVolunteer.apt_suite_number, 
+    newVolunteer.apt_suite_number || null, 
     newVolunteer.city, 
     newVolunteer.state, 
     newVolunteer.zipCode, 

@@ -24,6 +24,7 @@ function VolunteerPortalPage() {
     const params = useParams();
 
     const details = useSelector(store => store.detail);
+    const users = useSelector(store => store.user)
 
     useEffect(() => {
         dispatch({
@@ -52,8 +53,16 @@ function VolunteerPortalPage() {
         })
         setTo('');
         setFrom('');
+        setDate('');
         setSubject('');
         setLetterContents('');
+    }
+
+    const createTheLetter = () => {
+        setFrom('Laura');
+        setDate("2023-02-20");
+        setSubject('Hey Penpal!');
+        setLetterContents('sup')
     }
 
 
@@ -126,11 +135,11 @@ function VolunteerPortalPage() {
            {/* Start Write your penpal */}
             <div className="container">
                     <div className="row">
-                        <div className='col-6'>Write to your penpal below:</div>
+                        <div onClick={createTheLetter} className='col-6'>Write to {details.name} below:</div>
                     </div>
             
                 <div className="mb-3">
-                    <input type="text" className="form-control mt-3" id="exampleFormControlInput1" placeholder="To" value={to} onChange={(event) => setTo(event.target.value)}/>
+                    <input type="text" className="form-control mt-3" id="exampleFormControlInput1" placeholder={details.name} value={to} onChange={(event) => setTo(event.target.value)}/>
                     <input type="text" className="form-control mt-3" id="exampleFormControlInput1" placeholder="From" value={from} onChange={(event) => setFrom(event.target.value)}/>
                     <input type="date" className="form-control mt-3" id="exampleFormControlInput1" placeholder="Date" value={date} onChange={(event) => setDate(event.target.value)}/>
                     <input type="text" className="form-control mt-3" id="exampleFormControlInput1" placeholder="Subject" value={subject} onChange={(event) => setSubject(event.target.value)}/>
@@ -141,8 +150,8 @@ function VolunteerPortalPage() {
 
 
             {/* Start Edit Volunteer Profile Button */}
-            <div className="row mt-3"></div>
-                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button" onClick={() => history.push('/editVolunteerProfile')}>Edit My Volunteer Profile</button></div>
+            {/* <div className="row mt-3"></div>
+                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button" onClick={() => history.push('/editVolunteerProfile')}>Edit My Volunteer Profile</button></div> */}
             {/* End Edit Volunteer Profile Button */}
         
 
