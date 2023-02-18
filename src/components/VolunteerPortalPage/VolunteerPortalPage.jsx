@@ -67,11 +67,11 @@ function VolunteerPortalPage() {
 
     return (
         <>
-    
-            <div className="card-group"> 
+
+            <div className="card-group" style={{marginLeft:80, marginTop:40, marginRight:80}}> 
 
                 {/* Penpal Profiles Card */}
-                <div className="card border-primary mb-3">
+                <div className="card border border-5 border-dark mb-3">
                     <div className="card-body text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" 
                             width="150" 
@@ -96,7 +96,7 @@ function VolunteerPortalPage() {
 
 
    
-                <div className="card border-primary mb-3 style={{  }}">
+                <div className="card border border-5 border-dark mb-3">
                     <div className="card-body">
                         <h2>My Penpal:</h2>
                             <h3>{details.name}</h3>
@@ -108,7 +108,7 @@ function VolunteerPortalPage() {
 
 
                  {/* Writing Tips Card */}
-                <div className="card border-primary mb-3">
+                 <div className="card border border-5 border-dark mb-3">
                     <div className="card-body text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" 
                             width="150" 

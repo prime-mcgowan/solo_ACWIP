@@ -2,6 +2,7 @@ import {  useDispatch } from 'react-redux';
 import {  useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
+import { textAlign } from '@mui/system';
 
 
 function VolunteerForm() {
@@ -74,7 +75,7 @@ function VolunteerForm() {
         setZipCode('55418');
         setMondayMailers(true);
         setPenpalProgram(true);
-        setBioResponse('my bio respnse')
+        setBioResponse('I live in Northeast Minneapolis with my husband, Cameron. I am currently a student in the Fullstack Engineering Program at Prime Digital Academy. I decided to volunteer with the ACWIP because there is such a huge need for people who are willing to serve this very special community. I love going on hikes, taking bike rides and antiquing in search of hidden treasures. I believe there is nothing wrong with starting to listen to Christmas music the day after Halloween and that seasons one through six of The Office are television gold.')
     }
 
    
@@ -118,7 +119,7 @@ function VolunteerForm() {
                     <div className="col-md-12"><label className="labels">Email </label><input type="email" className="form-control" placeholder="email" value={email} onChange={(event) => setEmail(event.target.value)}/></div>
                     <div className="col-md-12"><label className="labels">Birthdate</label><input type="date" className="form-control" placeholder="birthdate" value={birthdate} onChange={(event) => setBirthdate(event.target.value)}/></div>
                     <div className="col-md-12"><label className="labels">Address</label><input type="text" className="form-control" placeholder="enter address" value={address} onChange={(event) => setAddress(event.target.value)}/></div>
-                    <div className="col-md-12"><label className="labels">Apartment or Suite</label><input type="text" className="form-control" placeholder="apartment or suite number" value={apt_suite_number} onChange={(event) => setApt_Suite_Number(event.target.value)}/></div>
+                    <div className="col-md-12"><label className="labels">Apartment or Suite Number</label><input type="text" className="form-control" placeholder="apartment or suite number" value={apt_suite_number} onChange={(event) => setApt_Suite_Number(event.target.value)}/></div>
                     <div className="col-md-12"><label className="labels">City</label><input type="text" className="form-control" placeholder="city" value={city} onChange={(event) => setCity(event.target.value)}/></div>
                     <div className="col-md-12"><label className="labels">State</label><input type="text" className="form-control" placeholder="state" value={state} onChange={(event) => setState(event.target.value)}/></div>
                     <div className="col-md-12"><label className="labels">Zip Code</label><input type="text" className="form-control" placeholder="zip code" value={zipCode} onChange={(event) => setZipCode(event.target.value)}/></div>
@@ -128,11 +129,16 @@ function VolunteerForm() {
 
 
         {/* Start of Volunteer Opportunities checkbox section */}
-                <input className="form-control" type="text" value="Please check the volunteer program(s) you would like to be a part of:" aria-label="readonly input example" readOnly/>
+                {/* <input className="form-control" type="text" value="Please check the volunteer program(s) you would like to be a part of:" aria-label="readonly input example" readOnly/> */}
+
+                <div className="mb-3" style={{marginTop:20, textAlign:'center', marginTop:25}}>
+                    <label htmlFor="exampleFormControlTextarea1" className="form-label" style={{}}>Please check the volunteer program(s) you would like to be a part of:</label>
+                </div>
+
 
                         <div className="form-check">
                             <input className="form-check-input" type="checkbox" checked={mondayMailers} onChange={() => setMondayMailers(!mondayMailers)} id="flexCheckDefault"/>
-                            <label className="form-check-label" htmlFor="flexCheckDefault">Monday Mailers</label>
+                            <label className="form-check-label" htmlFor="flexCheckDefault" >Monday Mailers</label>
                         </div>
 
                         <div className="form-check">
@@ -153,12 +159,16 @@ function VolunteerForm() {
 
              
             {/* Start of Bio Response section */}
-                <div className="mb-3">
-                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Tell us a little bit about yourself. Please type your response below.</label>
-                    <textarea className="form-control" id="exampleFormControlTextarea1" value={bioResponse} onChange={(event) => setBioResponse(event.target.value)}rows="3"></textarea>
+                <div className="mb-3" style={{marginTop:20, textAlign:'center', marginTop:25}}>
+                    <label htmlFor="exampleFormControlTextarea1" className="form-label" style={{}}>Tell us a little bit about yourself. <br></br>Type your response below.</label>
+                    
+                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{height:40, textAlign:'center'}}>Helpful Writing Prompts</button>
+
+                    
+                    
+                    <textarea className="form-control" id="exampleFormControlTextarea1" style={{marginTop:10}}value={bioResponse} onChange={(event) => setBioResponse(event.target.value)}rows="3"></textarea>
                 </div>
 
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Helpful Writing Prompts</button>
 
 
                     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

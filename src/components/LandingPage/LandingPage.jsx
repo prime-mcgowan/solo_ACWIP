@@ -93,7 +93,7 @@ function LandingPage() {
       <button className="btn btn-primary profile-button" type="button" 
       onClick={() => history.push('/getInvolvedPage')}>GET INVOLVED</button>
        <button className="btn btn-primary profile-button" type="button" style={{backgroundColor: '#008183', marginLeft: '.1rem', marginTop:'1rem', alignItems:'center'}}
-      onClick={() => history.push('/getInvolvedPage')}>BECOME A VOLUNTEER</button>
+      onClick={() => history.push('/registration')}>BECOME A VOLUNTEER</button>
     </div>
   </div>
 </div>

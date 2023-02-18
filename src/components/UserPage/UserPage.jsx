@@ -11,15 +11,19 @@ function UserPage() {
  
   const user = useSelector((store) => store.user);
   return (
-    <div className="container">
+    <div className="container" style={{textAlign:'center', marginTop:70}}>
       <h2>Welcome, {user.username}!</h2>
+      <p style={{marginTop:20}}>Thank you so much for becoming a volunteer with ACWIP.<br></br>Please click the button below to fill out your 
+          Volunteer Profile Form. <br></br>An ACWIP staff member will be reaching out to connect with you soon. 
+      </p>
+
       {/* <p>Your ID is: {user.id}</p> */}
       {/* <LogOutButton className="btn" /> */}
 
-      <div className="row mt-3"></div>
+      <div className="row mt-3" ></div>
                 <div className="mt-5 text-center">
                   <button 
-                  className="btn btn-primary profile-button" 
+                  className="btn btn-primary profile-button" style={{marginTop:-50}} 
                   type="button" 
                   onClick={() => history.push('/volunteerForm')}>Volunteer Profile Form
                   </button>

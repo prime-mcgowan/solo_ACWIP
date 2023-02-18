@@ -5,10 +5,25 @@ import { useHistory } from 'react-router-dom';
 
 function GetInformedPage() {
 
+  const numberStyles = {
+    position:'realative',
+    justifyContent:'center', 
+    alignItems:'center', 
+    alignSelf:'center',
+    paddingTop: 15,
+    fontSize:50
+  }
+
+  const cardBodyStyles = {
+    fontSize: 25, 
+    textAlign:'center'
+  }
+
+
     return (
 <>
 
-<div className="intro" style={{paddingTop:40, marginLeft: 75, marginRight: 75, fontSize: 18, textAlign:'center'}}>
+<div className="intro" style={{paddingTop:40, marginLeft: 75, marginRight: 75, fontSize: 24, textAlign:'center'}}>
     <p>The majority of women in prison are mothers, and they are usually the primary caretakers of the children. 
         The huge increase in female incarceration has significant impact on children and families. 
         An incarcerated woman is at risk of losing her children to the foster care system, 
@@ -26,35 +41,29 @@ function GetInformedPage() {
   style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center',
           paddingTop: 15, fontSize:50}}>80</h5>
     <div className="card-body" >
-      <h5 className="card-title" style={{fontSize: 25, textAlign:'center'}}>Percentage of incarcerated women who are mothers.</h5>     
+      <h5 className="card-title" style={cardBodyStyles}>Eighty percent of incarcerated women are mothers.</h5>     
     </div>
     {/* https://www.prisonpolicy.org/factsheets/women_pie_chart_report_2019.pdf */}
   </div>
   
 
   <div className="card">
-  <h5 className="card-title">1.25</h5>
+  <h5 className="card-title" style={numberStyles}>1.25</h5>
     <div className="card-body">
-      <h5 className="card-title">1.25 million children in have an incarcerated parent</h5>  
+      <h5 className="card-title" style={cardBodyStyles}>Over one million children have an incarcerated parent</h5>  
     </div>
       {/* https://www.aclu.org/other/facts-about-over-incarceration-women-united-states */}
    
   </div>
 
   <div className="card">
-  <h5 className="card-title">77</h5>
+  <h5 className="card-title" style={numberStyles}>77</h5>
     <div className="card-body">
-      <h5 className="card-title">Percentage of women who have experienced partner violence</h5>     
+      <h5 className="card-title" style={cardBodyStyles}>Seventy-seven percent of incarncerated women have experienced partner violence</h5>     
     </div>
   </div>
 
-  <div className="card">
-  <h5 className="card-title">39</h5>
-    <div className="card-body">
-      <h5 className="card-title">Percentage incarcerated women who led a single-parent household</h5>     
-    </div>
-    {/* https://www.sentencingproject.org/app/uploads/2022/11/Incarcerated-Women-and-Girls.pdf */}
-  </div>  
+ 
 </div>
 
 
@@ -62,33 +71,26 @@ function GetInformedPage() {
 {/* second card deck */}
 <div className="card-group" style={{marginLeft: 100, marginRight: 100}}>
   <div className="card">
-  <h5 className="card-title">63</h5>
+  <h5 className="card-title" style={numberStyles}>63</h5>
     <div className="card-body">
-      <h5 className="card-title">Percentage incarcerated individuals imprisoned over 100 miles from their families.</h5>     
+      <h5 className="card-title" style={cardBodyStyles}>Sixty-three percent of incarcerated individuals are imprisoned over 100 miles away from their families</h5>     
     </div>
     {/* https://www.prisonpolicy.org/reports/prisonvisits.html*/}
   </div>
 
-  <div className="card">
-  <h5 className="card-title"></h5>
-    <div className="card-body">
-      <h5 className="card-title"></h5>  
-    </div>
-      {/* https://www.aclu.org/other/facts-about-over-incarceration-women-united-states */}
-   
-  </div>
+  
 
   <div className="card">
-  <h5 className="card-title">13</h5>
+  <h5 className="card-title" style={numberStyles}>13</h5>
     <div className="card-body">
-      <h5 className="card-title">Incarcerated individuals who recieve visitors have their chances of a felony re-conviction drop by 13%</h5>     
+      <h5 className="card-title" style={cardBodyStyles}>Incarcerated individuals who recieve visitors have their chances of a felony re-conviction drop by thirteen percent</h5>     
     </div>
   </div>
 
   <div className="card">
-  <h5 className="card-title">39</h5>
+  <h5 className="card-title" style={numberStyles}>39</h5>
     <div className="card-body">
-      <h5 className="card-title">Percentage incarcerated women who led a single-parent household</h5>     
+      <h5 className="card-title" style={cardBodyStyles}>Thirty-nine percent of incarcerated women led a single-parent household</h5>     
     </div>
     {/* https://www.sentencingproject.org/app/uploads/2022/11/Incarcerated-Women-and-Girls.pdf */}
   </div>  

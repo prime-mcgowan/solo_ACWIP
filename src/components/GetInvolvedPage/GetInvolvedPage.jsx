@@ -3,23 +3,36 @@ import { useHistory } from 'react-router-dom';
 
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import { faItalic } from '@fortawesome/free-solid-svg-icons';
 
 
 
 
     function GetInvolvedPage() {
 
-      return (
+    const history = useHistory();
 
-            <div className="container"> 
+    const svgStyles = {
+        display:'flex',
+        justifyContent:'center'
+    }
+
+      return (
+        
+        <>
+
+                <h1 style={{marginTop:50, textAlign: 'center'}}>What is the ACWIP up to?</h1>
+                   
+
+            <div className="container" style={{}}> 
 
                 <div className="card mb-3">
                     <div className="row g-0">
 
-                        <div className="col-md-4">
+                        <div className="col-md-4" style={svgStyles}>
                             <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="150" 
-                                height="150" 
+                                width="100" 
+                                height="100" 
                                 fill="currentColor" 
                                 className="bi bi-mailbox" 
                                 viewBox="0 0 16 16">
@@ -31,20 +44,22 @@ import CardGroup from 'react-bootstrap/CardGroup';
                         <div className="col-md-8">
                             <div className="card-body">
                                 <h5 className="card-title">Monday Mailers</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p className="card-text">
+                                    Join us every first Monday of the month to 
+                                </p>
                         </div>
                     </div>
                 </div>
             </div>   
 
 
-            <div className="card mb-3" sx={{maxWidth: '540px'}}>
+            <div className="card mb-3" >
                 <div className="row g-0">
         
-                        <div className="col-md-4">
+                        <div className="col-md-4" style={svgStyles}>
                             <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="150" 
-                                height="150" 
+                                width="100" 
+                                height="100" 
                                 fill="currentColor" 
                                 className="bi bi-pencil" 
                                 viewBox="0 0 16 16">
@@ -55,7 +70,9 @@ import CardGroup from 'react-bootstrap/CardGroup';
                         <div className="col-md-8">
                             <div className="card-body">
                                 <h5 className="card-title">Penpal Project</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p className="card-text">
+                                    YOU can make a difference!! The 
+                                </p>
                             </div>
                         </div>
                 </div>
@@ -64,10 +81,10 @@ import CardGroup from 'react-bootstrap/CardGroup';
             <div className="card mb-3" sx={{maxWidth: '540px'}}>
                 <div className="row g-0">
         
-                        <div className="col-md-4">
+                        <div className="col-md-4" style={svgStyles}>
                             <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="150" 
-                                height="150" 
+                                width="100" 
+                                height="100" 
                                 fill="currentColor" 
                                 className="bi bi-gift" 
                                 viewBox="0 0 16 16">
@@ -78,7 +95,11 @@ import CardGroup from 'react-bootstrap/CardGroup';
                         <div className="col-md-8">
                             <div className="card-body">
                                 <h5 className="card-title">Operation Holidays</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p className="card-text">
+                                    Help us to make the holidays special for the incarcerated women we server AND their families. 
+                                    Small gift bags of allowable items are packeaged up and delivered to our women. We also provide
+                                    brand new donated toys that a child will recieve after from thier mother, during their holiday visit.
+                                </p>
                             </div>
                          </div>
                 </div>
@@ -88,10 +109,10 @@ import CardGroup from 'react-bootstrap/CardGroup';
             <div className="card mb-3" sx={{maxWidth: '540px'}}>
                 <div className="row g-0">
                     
-                    <div className="col-md-4">
+                    <div className="col-md-4" style={svgStyles}>
                         <svg xmlns="http://www.w3.org/2000/svg" 
-                            width="150" 
-                            height="150" 
+                            width="100" 
+                            height="100" 
                             fill="currentColor" 
                             className="bi bi-bus-front" 
                             viewBox="0 0 16 16">
@@ -103,7 +124,13 @@ import CardGroup from 'react-bootstrap/CardGroup';
                         <div className="col-md-8">
                             <div className="card-body">
                                 <h5 className="card-title">Get on the bus!!</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p className="card-text">
+                                Get On The Bus is an organization dedicated to serving the children of incarcerated mothers. Each year, 
+                                Get On The Bus coordinates a statewide event bringing buses of children and their guardians 
+                                for a Mother's Day visit. Get On The Bus is more than just a bus ride. Families are guided through every step of the prison paperwork 
+                                process by caring volunteers who get to know them. During the bus trip children receive healthy snacks and age appropriate games and puzzles. 
+                                While visiting, Get On The Bus provides a lunch and a family photograph. Each child receives a teddy bear and letter from his or her mother. 
+                                </p>
                             </div>
                         </div>
                 </div>
@@ -111,8 +138,15 @@ import CardGroup from 'react-bootstrap/CardGroup';
 
 
 
+            <div className="callToAction" style={{textAlign:'center', marginTop: 25}}>
+            <h2><span style={{fontStyle:'italic'}}>We can't do this work alone...</span>We need YOU.</h2><button className="btn btn-primary profile-button" type="button" style={{backgroundColor: '#008183', marginTop:10}}
+                            onClick={() => history.push('/registration')}>BECOME A VOLUNTEER
+                    </button>
+            </div>
 
-            </div>//closing tag for className="container"
+
+            </div> {/* closing tag for className="container" */}
+            </>
       )//closing for return
     }//end of GetInvolvedFunction
 
