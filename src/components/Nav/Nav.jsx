@@ -10,13 +10,13 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">ACWIP</h2>
+        <h2 className="nav-title" style={{fontSize:30}}>ACWIP</h2>
       </Link>
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
           // If there's no user, show login/registration links
-          <Link className="navLink" to="/login">
+          <Link className="navLink" to="/login" style={{fontSize:25}}>
             Login / Register
           </Link>
         )}
@@ -41,7 +41,7 @@ function Nav() {
           </>
         )}
 
-        <Link className="navLink" to="/about">
+        <Link className="navLink" to="/about" style={{fontSize:25}}>
           About
         </Link>
       </div>

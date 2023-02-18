@@ -8,7 +8,7 @@ function GetInformedPage() {
     return (
 <>
 
-<div>
+<div className="intro" style={{paddingTop:40, marginLeft: 75, marginRight: 75, fontSize: 18, textAlign:'center'}}>
     <p>The majority of women in prison are mothers, and they are usually the primary caretakers of the children. 
         The huge increase in female incarceration has significant impact on children and families. 
         An incarcerated woman is at risk of losing her children to the foster care system, 
@@ -18,49 +18,146 @@ function GetInformedPage() {
         The separation from family, and the risk of losing their children, is one of the most devastating consequences of female incarceration.</p>
 </div>
 
-<div className="row row-cols-1 row-cols-md-2 g-4">
-  <div className="col">
-    <div className="card">
-      <h1>80</h1>
-      <div className="card-body">
-        <h5 className="card-title">Percentage of incarcerated women with a child under the age of 18.</h5>
-        {/* <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
-      </div>
+<h1 style={{marginTop:50, textAlign: 'center', marginBottom: 20}}>By the Numbers:</h1>
+
+<div className="card-group" style={{ marginLeft: 100, marginRight: 100}}>
+  <div className="card">
+  <h5 className="card-title" 
+  style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center',
+          paddingTop: 15, fontSize:50}}>80</h5>
+    <div className="card-body" >
+      <h5 className="card-title" style={{fontSize: 25, textAlign:'center'}}>Percentage of incarcerated women who are mothers.</h5>     
+    </div>
+    {/* https://www.prisonpolicy.org/factsheets/women_pie_chart_report_2019.pdf */}
+  </div>
+  
+
+  <div className="card">
+  <h5 className="card-title">1.25</h5>
+    <div className="card-body">
+      <h5 className="card-title">1.25 million children in have an incarcerated parent</h5>  
+    </div>
+      {/* https://www.aclu.org/other/facts-about-over-incarceration-women-united-states */}
+   
+  </div>
+
+  <div className="card">
+  <h5 className="card-title">77</h5>
+    <div className="card-body">
+      <h5 className="card-title">Percentage of women who have experienced partner violence</h5>     
     </div>
   </div>
-  <div className="col">
-    <div className="card">
-      {/* <img src="..." className="card-img-top" alt="..."/> */}
-      <div className="card-body">
-        <h5 className="card-title">77</h5>
-        <p className="card-text">Percentage of women who have experienced partner violence</p>
-      </div>
+
+  <div className="card">
+  <h5 className="card-title">39</h5>
+    <div className="card-body">
+      <h5 className="card-title">Percentage incarcerated women who led a single-parent household</h5>     
     </div>
-  </div>
-  <div className="col">
-    <div className="card">
-      {/* <img src="..." className="card-img-top" alt="..."/> */}
-      <div className="card-body">
-        <h5 className="card-title">700</h5>
-        <p className="card-text">Percentage increase of incarcerated women over the last 40 years</p>
-      </div>
-    </div>
-  </div>
-  <div className="col">
-    <div className="card">
-      {/* <img src="..." className="card-img-top" alt="..."/> */}
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
+    {/* https://www.sentencingproject.org/app/uploads/2022/11/Incarcerated-Women-and-Girls.pdf */}
+  </div>  
 </div>
+
+
+
+{/* second card deck */}
+<div className="card-group" style={{marginLeft: 100, marginRight: 100}}>
+  <div className="card">
+  <h5 className="card-title">63</h5>
+    <div className="card-body">
+      <h5 className="card-title">Percentage incarcerated individuals imprisoned over 100 miles from their families.</h5>     
+    </div>
+    {/* https://www.prisonpolicy.org/reports/prisonvisits.html*/}
+  </div>
+
+  <div className="card">
+  <h5 className="card-title"></h5>
+    <div className="card-body">
+      <h5 className="card-title"></h5>  
+    </div>
+      {/* https://www.aclu.org/other/facts-about-over-incarceration-women-united-states */}
+   
+  </div>
+
+  <div className="card">
+  <h5 className="card-title">13</h5>
+    <div className="card-body">
+      <h5 className="card-title">Incarcerated individuals who recieve visitors have their chances of a felony re-conviction drop by 13%</h5>     
+    </div>
+  </div>
+
+  <div className="card">
+  <h5 className="card-title">39</h5>
+    <div className="card-body">
+      <h5 className="card-title">Percentage incarcerated women who led a single-parent household</h5>     
+    </div>
+    {/* https://www.sentencingproject.org/app/uploads/2022/11/Incarcerated-Women-and-Girls.pdf */}
+  </div>  
+</div>
+
+
+
+
+
+
+
+
     </>
         )
 }
 
 export default GetInformedPage;
+
+// {/* <div className="card">
+// <h5 className="card-title">475</h5>
+//   <div className="card-body">
+//     <h5 className="card-title">Percentage increase of incarcerated women over the last 40 years</h5>     
+//   </div>
+//   {/* https://www.sentencingproject.org/app/uploads/2022/11/Incarcerated-Women-and-Girls.pdf */}
+// </div> */}
+
+
+
+
+
+
+// {/* <div className="row row-cols-1 row-cols-md-2 g-4">
+//   <div className="col">
+//     <div className="card" style={{height: 200, width: 200, alignSelf: 'center', paddingTop: 20, marginLeft: 40}}>
+//       <h1>80</h1>
+//       <div className="card-body">
+//         <h5 className="card-title">Percentage of incarcerated women with a child under the age of 18.</h5>
+//         {/* <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
+//       </div>
+//     </div>
+//   </div>
+//   <div className="col">
+//     <div className="card">
+//       {/* <img src="..." className="card-img-top" alt="..."/> */}
+//       <div className="card-body">
+//         <h5 className="card-title">77</h5>
+//         <p className="card-text">Percentage of women who have experienced partner violence</p>
+//       </div>
+//     </div>
+//   </div>
+//   <div className="col">
+//     <div className="card">
+//       {/* <img src="..." className="card-img-top" alt="..."/> */}
+//       <div className="card-body">
+//         <h5 className="card-title">700</h5>
+//         <p className="card-text">Percentage increase of incarcerated women over the last 40 years</p>
+//       </div>
+//     </div>
+//   </div>
+//   <div className="col">
+//     <div className="card">
+//       {/* <img src="..." className="card-img-top" alt="..."/> */}
+//       <div className="card-body">
+//         <h5 className="card-title">Card title</h5>
+//         <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+//       </div>
+//     </div>
+//   </div>
+// </div> */}
 
 //flip cards w/ css
 // <div className="container d-flex align-items-center justify-content-center flex-wrap">

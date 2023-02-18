@@ -63,14 +63,14 @@ function LandingPage() {
 
       <div className="card-group">
   <div className="card">
-    <img src="./images/love.png"className="card-img-top" alt="..." style={{height: 200, width: 200, alignSelf: 'center'}}/>
-    <div className="card-body">
+    <img src="./images/love.png"className="card-img-top" alt="..." style={{height: 200, width: 200, alignSelf: 'center', paddingTop: 20}}/>
+    <div className="card-body" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
       {/* <h5 className="card-title">GET AQUAINTED</h5> */}
-      <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      {/* <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
       {/* <a href="#" className="btn btn-primary">GET AQUAINTED</a> */}
       <button 
       className="btn btn-primary profile-button" 
-      type="button" style={{}}
+      type="button" style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
       onClick={() => history.push('/getAquainted')}>GET AQUAINTED</button>
     </div>
   </div>

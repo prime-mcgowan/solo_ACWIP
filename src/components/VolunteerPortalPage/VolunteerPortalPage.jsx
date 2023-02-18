@@ -29,7 +29,6 @@ function VolunteerPortalPage() {
     useEffect(() => {
         dispatch({
             type: 'FETCH_PENPAL_DETAILS',
-            // payload:params.id
         })
     }, [])
 
