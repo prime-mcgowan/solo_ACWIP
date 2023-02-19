@@ -60,8 +60,8 @@ function VolunteerPortalPage() {
     const createTheLetter = () => {
         setFrom('Laura');
         setDate("2023-02-20");
-        setSubject('Hey Penpal!');
-        setLetterContents('sup')
+        setSubject('Hey Roseanna!');
+        setLetterContents('Dear Roseanna, I hope this letter finds you doing well. You are my very first penpal and I am so excited to get to know you!! I live in northeast Minneapolis with my husband, Cameron. I am currently a student in Full Stack Software Engineering bootcamp. I recently came across the ACWIPs website and immediately saw there was a need for incarcerated women to have support on the outside. So, it is my hope that our relationship can grow into that. So, I read your bio but would love to know more about you. What is your favorite movie and time of year? Thank you for taking the time to read my letter. I hope you have a nice day. - Laura')
     }
 
 

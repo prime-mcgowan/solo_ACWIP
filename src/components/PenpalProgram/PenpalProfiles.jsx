@@ -8,6 +8,14 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { useEffect } from 'react';
 import penpalsSaga from '../../redux/sagas/penpals.saga';
+import penpal from '../../redux/reducers/penpal.reducer';
+
+// Christy https://www.penacon.com/profiles/view/11512-christy-parton-53-f-aliceville-al
+// Sarah https://www.penacon.com/profiles/view/8332-sarah-korton-34-f-shakopee-mn
+// Roseanna https://wireofhope.com/prison-penpal-roseanna-tenijieth/
+
+
+
 
 
     function PenpalProfiles() {
@@ -55,7 +63,54 @@ import penpalsSaga from '../../redux/sagas/penpals.saga';
         <>
           <h2>Prospective Penpals:</h2>
 
-          <div className="penpalList">
+
+{/* <div className="card mb-3">
+  <div className="row g-0">
+    <div className="col-md-4">
+      <img src="..." className="img-fluid rounded-start" alt="..."/>   
+    </div>
+    <div className="col-md-8">
+      <div classname="card-body"> {penpals.map((penpal) => {
+          return (
+           <>
+           
+            key={penpal.penpal_id}>
+       
+        <h5 className="card-title">{penpal.name}</h5>
+        <p classname="card-text">{penpal.bio_response}</p>
+        </>
+      })
+    }
+          
+      </div>
+    </div>
+  </div>
+</div> */}
+
+
+
+{/* 
+          <div className="card mb-3" style="max-width: 540px;">
+            <div className="row g-0">
+                 <div className="col-me-4">
+                      <img src="..." className="img-fluid rounded-start" alt="..."/>
+                 </div>
+
+                 <div className="col-md-8">
+                  <div className="card-body">
+                    <section className="penpal">
+                        {penpals.map((penpal) => {
+                          return (
+                            <div className="card"
+                              key={penpal.penpal_id}>
+                                <h5 className="card-title">{penpal.name}</h5>
+                                <p className="card-text">{penpal.bio_response</p>
+                              </div>
+
+                        })
+                        }
+
+                    </section>
                <ul>
                   {penpals.map((penpal) => {
                     return <li
@@ -68,6 +123,68 @@ import penpalsSaga from '../../redux/sagas/penpals.saga';
                 }
               </ul>
           </div>  
+          </div>
+          </div>
+          </div> */}
+      
+
+
+
+{/* <div className="card mb-3" style="max-width:540"> */}
+{/* <div className="card mb-3">
+    <div className="row g-0"> */}
+      {/* <div className="col-md-4">
+        <img src="..." className="img-fluid rounded-start" alt="..."/>
+      </div> */}
+        {penpals.map(penpal => (
+          <div className="card mb-3">
+          <div className="row g-0">
+<div className="col-md-4">
+        <img src={"./images/love.png"} className="img-fluid rounded-start" alt="..." style={{width:200, height:200}}/>
+      </div>
+
+
+          <div className="col-md-8">
+            
+            <div className="card-body"
+            
+                key={penpal.penpal_id}>
+                <h5 className="card-title">{penpal.name}</h5>
+                <p className="card-text">{penpal.bio_response}</p>
+                <button onClick={() => {handleItsAMatchButton(penpal.penpal_id, penpal.name, penpal.bio_response)}}>It's a match!</button>
+            </div> 
+          </div>   
+          </div>
+</div>
+
+        ))}
+ 
+{/* </div> */}
+
+          {/* <div className="penpalList">
+               <ul>
+                  {penpals.map((penpal) => {
+                    return <li
+                      key={penpal.penpal_id}>
+                          {penpal.name}
+                          {penpal.bio_response}
+                      <button onClick={() => {handleItsAMatchButton(penpal.penpal_id, penpal.name, penpal.bio_response)}}>It's a match!</button>
+                    </li>
+                  })
+                }
+              </ul>
+          </div>  
+ */}
+
+
+
+
+
+
+
+
+
+          
         </>
       )//closing for return
     }//end of GetInvolvedFunction
