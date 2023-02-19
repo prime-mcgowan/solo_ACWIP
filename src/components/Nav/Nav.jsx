@@ -33,14 +33,14 @@ function Nav() {
             </Link> */}
 
 <Link className="navLink" to="/volunteerPortalPage">
-            Portal
+            Volunteer Portal
           </Link>
 
 
 
 
           <Link className="navLink" to="/editVolunteerProfile">
-            Profile
+            Edit Profile
           </Link>
 
        

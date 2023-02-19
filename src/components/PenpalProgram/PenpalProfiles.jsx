@@ -61,7 +61,7 @@ import penpal from '../../redux/reducers/penpal.reducer';
 
       return (
         <>
-          <h2>Prospective Penpals:</h2>
+          <h2 style={{marginTop:40, marginBottom:40, marginLeft:50, fontSize:36}}>Prospective Penpals:</h2>
 
 
 {/* <div className="card mb-3">
@@ -137,14 +137,28 @@ import penpal from '../../redux/reducers/penpal.reducer';
         <img src="..." className="img-fluid rounded-start" alt="..."/>
       </div> */}
         {penpals.map(penpal => (
-          <div className="card mb-3">
+          <div className="card mb-3" style={{marginLeft:50, marginRight:100}}>
           <div className="row g-0">
-<div className="col-md-4">
-        <img src={"./images/love.png"} className="img-fluid rounded-start" alt="..." style={{width:200, height:200}}/>
+<div className="col-md-2" style={{textAlign:'center', paddingTop:25}}>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16"
+    >
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>
+</svg>
+
+
+
+
+        {/* <img src={"./images/love.png"} className="img-fluid rounded-start" alt="..." 
+            style={{width:200, 
+              height:200, 
+              paddingTop:10 
+             }}/> */}
       </div>
 
 
-          <div className="col-md-8">
+          <div className="col-md-10">
             
             <div className="card-body"
             
