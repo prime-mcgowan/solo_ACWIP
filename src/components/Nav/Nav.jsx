@@ -49,7 +49,7 @@ function Nav() {
           </>
         )}
 
-        <Link className="navLink" to="/about">
+        <Link className="navLink" to="/about" style={{fontSize:25}}>
           About
         </Link>
       </div>

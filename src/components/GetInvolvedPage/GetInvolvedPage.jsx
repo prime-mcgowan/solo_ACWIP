@@ -29,10 +29,10 @@ import { faItalic } from '@fortawesome/free-solid-svg-icons';
                 <div className="card mb-3">
                     <div className="row g-0">
 
-                        <div className="col-md-4" style={svgStyles}>
+                        <div className="col-md-2" style={{textAlign:'center', paddingTop:20}}>
                             <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="100" 
-                                height="100" 
+                                width="130" 
+                                height="130" 
                                 fill="currentColor" 
                                 className="bi bi-mailbox" 
                                 viewBox="0 0 16 16">
@@ -41,11 +41,14 @@ import { faItalic } from '@fortawesome/free-solid-svg-icons';
                             </svg>
                         </div>
         
-                        <div className="col-md-8">
+                        <div className="col-md-10">
                             <div className="card-body">
-                                <h5 className="card-title">Monday Mailers</h5>
-                                <p className="card-text">
-                                    Join us every first Monday of the month to 
+                                <h5 className="card-title" style={{fontSize:28, paddingBottom:10}}>Monday Mailers</h5>
+                                <p className="card-text" style={{fontSize:22}}>
+                                    Join us every first Monday of the month to help put together our Penpal Packs.
+                                    We print off all the letters from our Penpal Project and get them ready to be sent
+                                    off to the women we serve. Along with the penpal letter we also like to include: a bookmark, 
+                                    inspirational saying card, fun adult coloring sheet or puzzles.
                                 </p>
                         </div>
                     </div>
@@ -56,10 +59,10 @@ import { faItalic } from '@fortawesome/free-solid-svg-icons';
             <div className="card mb-3" >
                 <div className="row g-0">
         
-                        <div className="col-md-4" style={svgStyles}>
+                        <div className="col-md-2" style={{textAlign:'center', paddingTop:40, paddingBottom:10}}>
                             <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="100" 
-                                height="100" 
+                                width="130" 
+                                height="130" 
                                 fill="currentColor" 
                                 className="bi bi-pencil" 
                                 viewBox="0 0 16 16">
@@ -67,11 +70,14 @@ import { faItalic } from '@fortawesome/free-solid-svg-icons';
                             </svg>
                         </div>
                 
-                        <div className="col-md-8">
+                        <div className="col-md-10">
                             <div className="card-body">
-                                <h5 className="card-title">Penpal Project</h5>
-                                <p className="card-text">
-                                    YOU can make a difference!! The 
+                                <h5 className="card-title" style={{fontSize:28, paddingBottom:10}}>Penpal Project</h5>
+                                <p className="card-text" style={{fontSize:22}}>
+                                    YOU can make a difference!! Writing to a incarcerated individual can have a significant
+                                    impact on their daily life, legal battle, sense of determination, feeling hope and the rehabilitation process.
+                                    Engaging in a prison penpal program helps to fight against recidivism. Writing to an incarcerated women can lead
+                                    to positive changes on both sides. 
                                 </p>
                             </div>
                         </div>
@@ -81,10 +87,10 @@ import { faItalic } from '@fortawesome/free-solid-svg-icons';
             <div className="card mb-3" sx={{maxWidth: '540px'}}>
                 <div className="row g-0">
         
-                        <div className="col-md-4" style={svgStyles}>
+                        <div className="col-md-2" style={{textAlign:'center', paddingTop:20}}>
                             <svg xmlns="http://www.w3.org/2000/svg" 
-                                width="100" 
-                                height="100" 
+                                width="130" 
+                                height="130" 
                                 fill="currentColor" 
                                 className="bi bi-gift" 
                                 viewBox="0 0 16 16">
@@ -92,10 +98,10 @@ import { faItalic } from '@fortawesome/free-solid-svg-icons';
                             </svg>
                         </div>
 
-                        <div className="col-md-8">
+                        <div className="col-md-10">
                             <div className="card-body">
-                                <h5 className="card-title">Operation Holidays</h5>
-                                <p className="card-text">
+                                <h5 className="card-title" style={{fontSize:28, paddingBottom:10}}>Operation Holidays</h5>
+                                <p className="card-text" style={{fontSize:22}}>
                                     Help us to make the holidays special for the incarcerated women we server AND their families. 
                                     Small gift bags of allowable items are packeaged up and delivered to our women. We also provide
                                     brand new donated toys that a child will recieve after from thier mother, during their holiday visit.
@@ -106,13 +112,13 @@ import { faItalic } from '@fortawesome/free-solid-svg-icons';
             </div>   
     
 
-            <div className="card mb-3" sx={{maxWidth: '540px'}}>
+            <div className="card mb-3">
                 <div className="row g-0">
                     
-                    <div className="col-md-4" style={svgStyles}>
+                    <div className="col-md-2"  style={{textAlign:'center', paddingTop:40}}>
                         <svg xmlns="http://www.w3.org/2000/svg" 
-                            width="100" 
-                            height="100" 
+                            width="130" 
+                            height="130" 
                             fill="currentColor" 
                             className="bi bi-bus-front" 
                             viewBox="0 0 16 16">
@@ -121,10 +127,10 @@ import { faItalic } from '@fortawesome/free-solid-svg-icons';
                         </svg>
                     </div>
         
-                        <div className="col-md-8">
+                        <div className="col-md-10">
                             <div className="card-body">
-                                <h5 className="card-title">Get on the bus!!</h5>
-                                <p className="card-text">
+                                <h5 className="card-title" style={{fontSize:28,paddingBottom:10 }}>Get on the bus!!</h5>
+                                <p className="card-text" style={{fontSize:22}}>
                                 Get On The Bus is an organization dedicated to serving the children of incarcerated mothers. Each year, 
                                 Get On The Bus coordinates a statewide event bringing buses of children and their guardians 
                                 for a Mother's Day visit. Get On The Bus is more than just a bus ride. Families are guided through every step of the prison paperwork 
