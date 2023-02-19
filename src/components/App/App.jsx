@@ -31,6 +31,7 @@ import GetAquainted from '../GetAquainted/GetAquainted';
 import GetInformedPage from '../GetInformed/GetInformedPage';
 import WritingTips from '../VolunteerPortalPage/WritingTips';
 
+
 // import PenpalDetails from '../PenpalProgram/PenpalDetails';
 // import PenpalItem from '../PenpalProgram/PenpalItem';
 
@@ -128,13 +129,13 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          <ProtectedRoute
+          <Route
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/info"
           >
             <InfoPage />
-          </ProtectedRoute>
+          </Route>
 
           <Route
             exact

@@ -145,7 +145,7 @@ import { faItalic } from '@fortawesome/free-solid-svg-icons';
 
 
             <div className="callToAction" style={{textAlign:'center', marginTop: 25}}>
-            <h2><span style={{fontStyle:'italic'}}>We can't do this work alone...</span>We need YOU.</h2><button className="btn btn-primary profile-button" type="button" style={{backgroundColor: '#008183', marginTop:10}}
+            <h2><span style={{fontStyle:'italic'}}>We can't do this work alone...</span>We need YOU.</h2><button className="btn btn-lg profile-button" type="button" style={{backgroundColor:'#FC766AFF', marginTop:10}}
                             onClick={() => history.push('/registration')}>BECOME A VOLUNTEER
                     </button>
             </div>

@@ -65,7 +65,7 @@ function* createNewMatch(action) {
             data: {user_id:newMatch.user_id,
                    penpal_id:newMatch.penpal_id,
                     name:newMatch.name,
-                    bio_response:newMatch.bio_response }
+                    bio_response:newMatch.bio_response}
         });
     } catch (error) {
         console.log('newMatch SAGA POST request failed', error);

@@ -84,7 +84,7 @@ router.post('/', (req, res) => {
     newMatch.user_id,
     newMatch.penpal_id,
     newMatch.name,
-    newMatch.bio_response
+    newMatch.bio_response,
   ]
   pool.query(sqlQuery, queryValues)
     .then((response) => res.sendStatus(201))

@@ -60,8 +60,8 @@ function VolunteerPortalPage() {
     const createTheLetter = () => {
         setFrom('Laura');
         setDate("2023-02-20");
-        setSubject('Hey Roseanna!');
-        setLetterContents('Dear Roseanna, I hope this letter finds you doing well. You are my very first penpal and I am so excited to get to know you!! I live in northeast Minneapolis with my husband, Cameron. I am currently a student in Full Stack Software Engineering bootcamp. I recently came across the ACWIPs website and immediately saw there was a need for incarcerated women to have support on the outside. So, it is my hope that our relationship can grow into that. So, I read your bio but would love to know more about you. What is your favorite movie and time of year? Thank you for taking the time to read my letter. I hope you have a nice day. - Laura')
+        setSubject('Hi Sarah!!');
+        setLetterContents('Dear Sarah, I hope this letter finds you doing well. You are my very first penpal and I am so excited to get to know you!! I live in northeast Minneapolis with my husband, Cameron. I am currently a student in Full Stack Software Engineering bootcamp. I recently came across the ACWIPs website and immediately saw there was a need for incarcerated women to have support on the outside. So, it is my hope that our relationship can grow into that. So, I read your bio but would love to know more about you. What is your favorite movie and time of year? Thank you for taking the time to read my letter. I hope you have a nice day. - Laura')
     }
 
 
@@ -85,7 +85,7 @@ function VolunteerPortalPage() {
 
                     <div className="mt-5 text-center">
                         <button 
-                            className="btn btn-primary profile-button" 
+                            className="btn btn-lg profile-button" style={{backgroundColor:'#00acb0'}}
                             type="button" 
                             onClick={() => history.push('/penpalProfiles')}>Penpal Profiles
                         </button>
@@ -97,7 +97,7 @@ function VolunteerPortalPage() {
 
    
                 <div className="card border border-5 border-dark mb-3">
-                    <div className="card-body">
+                    <div className="card-body" style={{overflow:'scroll', maxHeight: 300 }}>
                         <h2>My Penpal:</h2>
                             <h3>{details.name}</h3>
                             <p>{details.bio_response}</p>
@@ -121,7 +121,7 @@ function VolunteerPortalPage() {
                         </svg>
                         <div className="mt-5 text-center"></div>
                             <button 
-                                className="btn btn-primary profile-button" 
+                                className="btn btn-lg profile-button" style={{backgroundColor:'#00acb0'}}
                                 onClick={() => history.push('/writingTips')}>Writing Tips
                             </button>
                         </div>
@@ -144,7 +144,7 @@ function VolunteerPortalPage() {
                     <input type="text" className="form-control mt-3" id="exampleFormControlInput1" placeholder="Subject" value={subject} onChange={(event) => setSubject(event.target.value)}/>
                     <textarea className="form-control mt-3" id="exampleFormControlTextarea1" placeholder="Type your letter here" rows="3" value={letterContents} onChange={(event) => setLetterContents(event.target.value)}></textarea>
                 </div>
-                <div className="mt-5 text-center"><button className="btn btn-primary profile-button" type="button" onClick={handleNewLetterSubmission} >SEND</button></div>
+                <div className="mt-5 text-center"><button className="btn btn-lg profile-button" type="button" style={{backgroundColor:'#FC766AFF'}}onClick={handleNewLetterSubmission} >SEND</button></div>
             </div>{/* End Contact Corner Container */}
 
 

@@ -12,13 +12,20 @@ function Nav() {
       <Link to="/home">
         <h2 className="nav-title" style={{fontSize:30}}>ACWIP</h2>
       </Link>
+
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
           // If there's no user, show login/registration links
-          <Link className="navLink" to="/login" style={{fontSize:25}}>
+          <Link className="navLink" to="/login" style={{fontSize:20}}>
             Login / Register
           </Link>
+ 
+          
+           
+
+
+
         )}
 
         {/* If a user is logged in, show these links */}
@@ -27,19 +34,19 @@ function Nav() {
             {/* <Link className="navLink" to="/user">
               Home
             </Link> */}
-{/* 
-            <Link className="navLink" to="/info">
+
+            {/* <Link className="navLink" to="/info">
               Info Page
             </Link> */}
 
-<Link className="navLink" to="/volunteerPortalPage">
+<Link className="navLink" to="/volunteerPortalPage" style={{fontSize:20}}>
             Volunteer Portal
           </Link>
 
 
 
 
-          <Link className="navLink" to="/editVolunteerProfile">
+          <Link className="navLink" to="/editVolunteerProfile" style={{fontSize:20}}>
             Edit Profile
           </Link>
 
@@ -49,9 +56,13 @@ function Nav() {
           </>
         )}
 
-        <Link className="navLink" to="/about" style={{fontSize:25}}>
+        <Link className="navLink" to="/about" style={{fontSize:20}}>
           About
         </Link>
+
+        <Link className="navLink" to="/info" style={{fontSize:20}}>
+              Info Page
+            </Link>
       </div>
     </div>
   );

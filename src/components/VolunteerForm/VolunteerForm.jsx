@@ -75,7 +75,11 @@ function VolunteerForm() {
         setZipCode('55418');
         setMondayMailers(true);
         setPenpalProgram(true);
-        setBioResponse('I live in Northeast Minneapolis with my husband, Cameron. I am currently a student in the Fullstack Engineering Program at Prime Digital Academy. I decided to volunteer with the ACWIP because there is such a huge need for people who are willing to serve this very special community. I love going on hikes, taking bike rides and antiquing in search of hidden treasures. I believe there is nothing wrong with starting to listen to Christmas music the day after Halloween and that seasons one through six of The Office are television gold.')
+    }
+
+    const fillBioResponse = () => {
+        setBioResponse('I live in Northeast Minneapolis with my husband, Cameron. I am currently a student in the Full Stack Engineering Program at Prime Digital Academy. I decided to volunteer with the ACWIP because there is such a huge need for people who are willing to serve this very special community. I love going on hikes, taking bike rides and antiquing in search of hidden treasures. I believe there is nothing wrong with starting to listen to Christmas music the day after Halloween and that seasons one through six of The Office are television gold.')
+
     }
 
    
@@ -160,9 +164,9 @@ function VolunteerForm() {
              
             {/* Start of Bio Response section */}
                 <div className="mb-3" style={{marginTop:20, textAlign:'center', marginTop:25}}>
-                    <label htmlFor="exampleFormControlTextarea1" className="form-label" style={{}}>Tell us a little bit about yourself. <br></br>Type your response below.</label>
+                    <label onClick={fillBioResponse} htmlFor="exampleFormControlTextarea1" className="form-label" style={{}}>Tell us a little bit about yourself. <br></br>Type your response below.</label>
                     
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{height:40, textAlign:'center'}}>Helpful Writing Prompts</button>
+                    <button type="button" className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{height:40, textAlign:'center', backgroundColor:'#FC766AFF'}}>Helpful Writing Prompts</button>
 
                     
                     
@@ -200,7 +204,7 @@ function VolunteerForm() {
 
             {/* Submit Button */}
                 <div className="row mt-3"></div>
-                <div className="mt-5 text-center"><button  onClick={handleVolunteerProfileSubmission} className="btn btn-primary profile-button" type="button">SUBMIT</button></div>
+                <div className="mt-5 text-center"><button  onClick={handleVolunteerProfileSubmission} className="btn profile-button" type="button" style={{backgroundColor:'#FC766AFF'}}>SUBMIT</button></div>
             
             
             

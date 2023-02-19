@@ -69,8 +69,8 @@ function LandingPage() {
       {/* <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
       {/* <a href="#" className="btn btn-primary">GET AQUAINTED</a> */}
       <button 
-      className="btn btn-primary profile-button btn-lg" 
-      type="button" style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
+      className="btn profile-button btn-lg"
+      type="button" style={{ backgroundColor:'#00acb0',position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
       onClick={() => history.push('/getAquainted')}>GET AQUAINTED</button>
     </div>
   </div>
@@ -79,7 +79,7 @@ function LandingPage() {
     <div className="card-body" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
       {/* <h5 className="card-title">GET INFORMED</h5> */}
       {/* <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p> */}
-      <button className="btn btn-primary profile-button btn-lg" type="button" style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
+      <button className="btn  profile-button btn-lg" type="button" style={{ backgroundColor:'#00acb0',position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
       onClick={() => history.push('/getInformedPage')}>GET INFORMED</button>
       {/* <a href="#" className="btn btn-primary">GET INFORMED</a> */}
     </div>
@@ -90,9 +90,9 @@ function LandingPage() {
       {/* <h5 className="card-title">GET INVOLVED</h5> */}
       {/* <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p> */}
       {/* <a href="#" className="btn btn-primary" type="button"  onClick={() => history.push('/getInvolvedPage')}>GET INVOLVED</a> */}
-      <button className=" btn btn-primary profile-button btn-lg" type="button" style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
+      <button className=" btn profile-button btn-lg" type="button" style={{backgroundColor:'#00acb0',position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
       onClick={() => history.push('/getInvolvedPage')}>GET INVOLVED</button>
-       <button className="btn btn-primary profile-button btn-lg" type="button" style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center', backgroundColor:'springgreen'}}
+       <button className="btn profile-button btn-lg" type="button" style={{backgroundColor:'#FC766AFF',position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
       onClick={() => history.push('/registration')}>BECOME A VOLUNTEER</button>
     </div>
   </div>

@@ -23,7 +23,7 @@ function UserPage() {
       <div className="row mt-3" ></div>
                 <div className="mt-5 text-center">
                   <button 
-                  className="btn btn-primary profile-button" style={{marginTop:-50}} 
+                  className="btn btn-lg profile-button" style={{marginTop:-50,backgroundColor:'#FC766AFF'}} 
                   type="button" 
                   onClick={() => history.push('/volunteerForm')}>Volunteer Profile Form
                   </button>
