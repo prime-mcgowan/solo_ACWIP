@@ -18,7 +18,7 @@ function Nav() {
         {!user.id && (
           // If there's no user, show login/registration links
           <Link className="navLink" to="/login" style={{fontSize:20}}>
-            Login / Register
+            Login / <span style={{color:'black', fontWeight:'bold'}}>Become a Volunter</span>
           </Link>
  
           

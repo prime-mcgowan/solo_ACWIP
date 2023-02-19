@@ -17,7 +17,7 @@ function AboutPage() {
 
 
 <div className="container">
-      <div className="card mb-3" style={{textAlign:'center', }}>
+      <div className="card mb-3" style={{textAlign:'center'}}>
       <h3 >Technologies used:</h3>
 
   <div className="row g-0">
@@ -82,17 +82,17 @@ function AboutPage() {
       <div className="card mb-3">
   <div className="row g-0">
     <div className="col-md-4">
-      <img src="./images/prime-logo.png" className="img-fluid rounded-start" alt="..."/>
+      <img src="./images/prime-logo.png" className="img-fluid rounded-start" alt="..." style={{paddingTop:40, paddingBottom:40, width:400, height:400}}/>
     </div>
     <div className="col-md-8">
       <div className="card-body">
-        <h5 className="card-title">Big thanks go out to...</h5>
-        <ul className="card-text">
-          <li>Matt - Our fearless leader</li>
-          <li>Kevin and Vada - Who have saved the day a number of times</li>
+        <h5 className="card-title" style={{fontSize:30}}>Big thanks go out to...</h5>
+        <ul className="card-text" style={{fontSize:26}}>
+          <li>Matt - Our fearless leader.</li>
+          <li>Kevin and Vada - Who have saved the day a number of times.</li>
           <li>The Weekend Zoom Squad...you know who you are.</li>
           <li>Farah, Aman, Lauren, Shong and Natalie - for helping dig me out of holes I coded myself into.</li>
-          <li>Christy and Bellamy - for tryin' to help get us all paid.</li>
+          <li>Christy and Bellamy - for tryin' to help get us paid.</li>
           <li>The ENTIRE Vonnegut cohort - I don't know how Mark and the crew got such an incredible group of people together in one room!!</li>
         </ul>
       </div>
@@ -106,13 +106,15 @@ function AboutPage() {
       <div className="card mb-3">
   <div className="row g-0">
     <div className="col-md-4">
-      <img src="./images/prime-logo.png" className="img-fluid rounded-start" alt="..."/>
+      <img src="./images/nana.jpg" className="img-fluid rounded-start" alt="..." style={{width:270, height:200, paddingLeft:50}}/>
+      <img src="./images/fam.jpg" className="img-fluid rounded-start" alt="..." style={{width:270, height:200, paddingLeft:50}}/>
+
     </div>
     <div className="col-md-8">
-      <div className="card-body">
-        <h5 className="card-title">To my family:</h5>
-            <p>
-              Your support has brought me to this moment - something I have been wanting for, for a long time.
+      <div className="card-body" >
+        <h5 className="card-title" style={{fontSize:30, fontSize:26, display:'flex', alignItems:'center', justifyContent:'center', paddingTop:50}}>To my family:</h5>
+            <p style={{fontSize:26, display:'flex', alignItems:'center', justifyContent:'center'}}>
+              Your support has brought me to this moment - something I have been wanting for a long time.
               I am so blessed to have you all in my corner. You encouraged me to take a risk and to totally 
               reinvent myself. Without your belief in me, I wouldn't be where I am today.
             </p>

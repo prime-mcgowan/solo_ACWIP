@@ -12,8 +12,8 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   return (
     <div className="container" style={{textAlign:'center', marginTop:70}}>
-      <h2>Welcome, {user.username}!</h2>
-      <p style={{marginTop:20}}>Thank you so much for becoming a volunteer with ACWIP.<br></br>Please click the button below to fill out your 
+      <h2 style={{fontSize:40}}>Welcome, {user.username}!</h2>
+      <p style={{marginTop:20, fontSize:30}}>Thank you so much for becoming a volunteer with ACWIP.<br></br>Please click the button below to fill out your 
           Volunteer Profile Form. <br></br>An ACWIP staff member will be reaching out to connect with you soon. 
       </p>
 

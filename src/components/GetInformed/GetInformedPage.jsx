@@ -11,11 +11,11 @@ function GetInformedPage() {
     alignItems:'center', 
     alignSelf:'center',
     paddingTop: 15,
-    fontSize:50
+    fontSize:70
   }
 
   const cardBodyStyles = {
-    fontSize: 25, 
+    fontSize: 32, 
     textAlign:'center'
   }
 
@@ -23,7 +23,7 @@ function GetInformedPage() {
     return (
 <>
 
-<div className="intro" style={{paddingTop:40, marginLeft: 75, marginRight: 75, fontSize: 24, textAlign:'center'}}>
+<div className="intro" style={{paddingTop:80, marginLeft: 100, marginRight: 100, fontSize: 32, textAlign:'center'}}>
     <p>The majority of women in prison are mothers, and they are usually the primary caretakers of the children. 
         The huge increase in female incarceration has significant impact on children and families. 
         An incarcerated woman is at risk of losing her children to the foster care system, 
@@ -38,10 +38,9 @@ function GetInformedPage() {
 <div className="card-group" style={{ marginLeft: 100, marginRight: 100}}>
   <div className="card">
   <h5 className="card-title" 
-  style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center',
-          paddingTop: 15, fontSize:50}}>80</h5>
+  style={numberStyles}>63</h5>
     <div className="card-body" >
-      <h5 className="card-title" style={cardBodyStyles}>Eighty percent of incarcerated women are mothers.</h5>     
+      <h5 className="card-title" style={cardBodyStyles}>Sixty-three percent of incarcerated women have a child under the age of 18.</h5>     
     </div>
     {/* https://www.prisonpolicy.org/factsheets/women_pie_chart_report_2019.pdf */}
   </div>
@@ -59,7 +58,7 @@ function GetInformedPage() {
   <div className="card">
   <h5 className="card-title" style={numberStyles}>77</h5>
     <div className="card-body">
-      <h5 className="card-title" style={cardBodyStyles}>Seventy-seven percent of incarncerated women have experienced partner violence</h5>     
+      <h5 className="card-title" style={cardBodyStyles}>Seventy-seven percent of incarcerated women have experienced partner violence</h5>     
     </div>
   </div>
 
@@ -71,9 +70,9 @@ function GetInformedPage() {
 {/* second card deck */}
 <div className="card-group" style={{marginLeft: 100, marginRight: 100}}>
   <div className="card">
-  <h5 className="card-title" style={numberStyles}>63</h5>
+  <h5 className="card-title" style={numberStyles}>60</h5>
     <div className="card-body">
-      <h5 className="card-title" style={cardBodyStyles}>Sixty-three percent of incarcerated individuals are imprisoned over 100 miles away from their families</h5>     
+      <h5 className="card-title" style={cardBodyStyles}>Sixty percent of incarcerated individuals are imprisoned over 100 miles away from their family</h5>     
     </div>
     {/* https://www.prisonpolicy.org/reports/prisonvisits.html*/}
   </div>

@@ -27,7 +27,7 @@ function LandingPage() {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{marginTop:-40}}>
       {/* <h2>{heading}</h2> */}
 
 
@@ -51,7 +51,7 @@ function LandingPage() {
 	        </div>
 
 
-	        <div className="lc-block col-lg-6 mx-auto mb-4">
+	        <div className="lc-block col-lg-12 mx-auto mb-4">
 		          <div editable="rich">
 			            <p className="lead" style={{fontSize:30}}>Advocating for the humane and compassionate treatment of all incarcerated women.</p>
 		          </div>
@@ -61,7 +61,7 @@ function LandingPage() {
 
       
 
-      <div className="card-group">
+      <div className="card-group" style={{marginTop:-80}}>
   <div className="card">
     <img src="./images/love.png"className="card-img-top" alt="..." style={{height: 250, width: 250, alignSelf: 'center', paddingTop: 20}}/>
     <div className="card-body" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
@@ -109,7 +109,7 @@ function LandingPage() {
         <div className="col-md-8">
         <div className="card-body">
             <h5 className="card-title">MEET THE FOUNDER</h5>
-            <p className="card-text">Gloria Killian was released from prison in 2002 after spending more then 16 years behind bars for a crime she did not commit.
+            <p className="card-text">Gloria Killian was released from prison in 2002 after spending more than 16 years behind bars for a crime she did not commit.
                     As a former law student, Gloria worked in the prison law library providing legal assistance to other inmates and developing 
                     specialized legal services for many different areas of the prison. Since her release, Gloria hs been advocating 
                     for the humane treatment and release of the women she left behind. She has taken her fight to the California legislature, speaking 
