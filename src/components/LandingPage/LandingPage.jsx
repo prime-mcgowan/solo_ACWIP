@@ -63,36 +63,36 @@ function LandingPage() {
 
       <div className="card-group">
   <div className="card">
-    <img src="./images/love.png"className="card-img-top" alt="..." style={{height: 200, width: 200, alignSelf: 'center', paddingTop: 20}}/>
+    <img src="./images/love.png"className="card-img-top" alt="..." style={{height: 250, width: 250, alignSelf: 'center', paddingTop: 20}}/>
     <div className="card-body" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
       {/* <h5 className="card-title">GET AQUAINTED</h5> */}
       {/* <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
       {/* <a href="#" className="btn btn-primary">GET AQUAINTED</a> */}
       <button 
-      className="btn btn-primary profile-button" 
+      className="btn btn-primary profile-button btn-lg" 
       type="button" style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
       onClick={() => history.push('/getAquainted')}>GET AQUAINTED</button>
     </div>
   </div>
   <div className="card">
-    <img src="./images/lamp.png" className="card-img-top" alt="..." style={{height: 200, width: 200, alignSelf: 'center'}}/>
-    <div className="card-body">
+    <img src="./images/lamp.png" className="card-img-top" alt="..." style={{height: 250, width: 250, alignSelf: 'center', paddingTop:20}}/>
+    <div className="card-body" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
       {/* <h5 className="card-title">GET INFORMED</h5> */}
-      <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <button className="btn btn-primary profile-button" type="button" 
+      {/* <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p> */}
+      <button className="btn btn-primary profile-button btn-lg" type="button" style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
       onClick={() => history.push('/getInformedPage')}>GET INFORMED</button>
       {/* <a href="#" className="btn btn-primary">GET INFORMED</a> */}
     </div>
   </div>
   <div className="card">
-    <img src="./images/energy.png" className="card-img-top" alt="..." style={{height: 200, width: 200, alignSelf: 'center'}}/>
-    <div className="card-body">
+    <img src="./images/energy.png" className="card-img-top" alt="..." style={{height: 250, width: 250, alignSelf: 'center', paddingTop:20}}/>
+    <div className="card-body d-grid gap-2"  style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
       {/* <h5 className="card-title">GET INVOLVED</h5> */}
-      <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      {/* <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p> */}
       {/* <a href="#" className="btn btn-primary" type="button"  onClick={() => history.push('/getInvolvedPage')}>GET INVOLVED</a> */}
-      <button className="btn btn-primary profile-button" type="button" 
+      <button className=" btn btn-primary profile-button btn-lg" type="button" style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center'}}
       onClick={() => history.push('/getInvolvedPage')}>GET INVOLVED</button>
-       <button className="btn btn-primary profile-button" type="button" style={{backgroundColor: '#008183', marginLeft: '.1rem', marginTop:'1rem', alignItems:'center'}}
+       <button className="btn btn-primary profile-button btn-lg" type="button" style={{position:'realative',justifyContent:'center', alignItems:'center', alignSelf:'center', backgroundColor:'springgreen'}}
       onClick={() => history.push('/registration')}>BECOME A VOLUNTEER</button>
     </div>
   </div>

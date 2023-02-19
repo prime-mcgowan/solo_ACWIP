@@ -6,6 +6,8 @@ import { color } from '@mui/system';
 
 function writingTips() {
 
+    const history = useHistory();
+
     const details = useSelector(store => store.detail);
 
     const listStyles = {
@@ -59,13 +61,12 @@ Be sure     to sign your name at the end
             </li>
 
         </ol>
-        
-            
+
+   
 
 
-
-
-
+<div className="mt-5 text-center"><button className="btn btn-primary profile-button btn-lg" type="button" onClick={() => history.push('/volunteerPortalPage')}>Back to my Volunteer Portal</button></div>
+           {/* End Contact Corner Container */}
 
 
 
