@@ -93,7 +93,7 @@ function AboutPage() {
           <li>The Weekend Zoom Squad...you know who you are.</li>
           <li>Farah, Aman, Lauren, Shong and Natalie - for helping dig me out of holes I coded myself into.</li>
           <li>Christy and Bellamy - for tryin' to help get us paid.</li>
-          <li>The ENTIRE Vonnegut cohort - I don't know how Mark and the crew got such an incredible group of people together in one room!!</li>
+          <li>The ENTIRE Code Crankin' Vonnegut cohort - I don't know how Mark and the crew got such an incredible group of people together in one room!!</li>
         </ul>
       </div>
     </div>

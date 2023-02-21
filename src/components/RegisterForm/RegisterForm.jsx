@@ -20,9 +20,14 @@ function RegisterForm() {
     });
   }; // end registerUser
 
+  const fillRegistration = () => {
+    setUsername('Laura');
+    setPassword('McGowan')
+  }
+
   return (
     <form className="formPanel" onSubmit={registerUser}>
-      <h2>Register User</h2>
+      <h2 onClick={fillRegistration}>Register User</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}

@@ -108,8 +108,8 @@ function LandingPage() {
         </div>
         <div className="col-md-8">
         <div className="card-body">
-            <h5 className="card-title">MEET THE FOUNDER</h5>
-            <p className="card-text">Gloria Killian was released from prison in 2002 after spending more than 16 years behind bars for a crime she did not commit.
+            <h5 className="card-title" style={{fontWeight:'bold'}}>MEET THE FOUNDER</h5>
+            <p className="card-text" style={{fontSize: 20}}>Gloria Killian was released from prison in 2002 after spending more than 16 years behind bars for a crime she did not commit.
                     As a former law student, Gloria worked in the prison law library providing legal assistance to other inmates and developing 
                     specialized legal services for many different areas of the prison. Since her release, Gloria hs been advocating 
                     for the humane treatment and release of the women she left behind. She has taken her fight to the California legislature, speaking 
