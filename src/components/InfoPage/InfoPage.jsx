@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-// This is one of our simplest components
-// It doesn't have local state
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is
 
 function InfoPage() {
+
+  const[showImage, setShowImage] = useState(false);
+
+  const handleClick = () => {
+    setShowImage(!showImage);
+  };
+
   return (
-    <div className="container">
-      <p>Info Page</p>
-    </div>
+<div>
+  <h1 onClick={handleClick} style={{textAlign:'center',fontSize:100}}>Vonnegut Solo Project</h1>
+  {showImage && <img src="./images/acwip.png" style={{marginTop:100, display: "block", margin: "auto"}}/>}
+</div>
   );
 }
 

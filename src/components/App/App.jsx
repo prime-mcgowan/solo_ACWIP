@@ -20,7 +20,27 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
+// My additions:
+import GetInvolvedPage from '../GetInvolvedPage/GetInvolvedPage';
+import VolunteerForm from '../VolunteerForm/VolunteerForm';
+import VolunteerPortalPage from '../VolunteerPortalPage/VolunteerPortalPage';
+import EditVolunteerProfile from '../VolunteerForm/EditVolunteerProfile';
+import PenpalProfiles from '../PenpalProgram/PenpalProfiles';
+import PenpalMatch from '../PenpalProgram/PenpalMatch';
+import GetAquainted from '../GetAquainted/GetAquainted';
+import GetInformedPage from '../GetInformed/GetInformedPage';
+import WritingTips from '../VolunteerPortalPage/WritingTips';
+
+
+// import PenpalDetails from '../PenpalProgram/PenpalDetails';
+// import PenpalItem from '../PenpalProgram/PenpalItem';
+
+// Images in React App
+import 'holderjs';
+
+
 import './App.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -48,6 +68,55 @@ function App() {
             <AboutPage />
           </Route>
 
+{/* PenpalProfiles */}
+<Route exact path="/getInformedPage">
+              <GetInformedPage />
+          </Route>              
+
+{/* GetAquainted */}
+<Route exact path="/getAquainted">
+              <GetAquainted />
+          </Route>
+
+
+{/* GetInvolvedPage */}
+          <Route exact path="/getInvolvedPage">
+              <GetInvolvedPage />
+          </Route>
+
+
+
+
+
+
+
+{/* VolunteerRegForm */}
+          <ProtectedRoute exact path="/volunteerForm">
+              <VolunteerForm />
+          </ProtectedRoute>
+
+ {/* VolunteerPortalPage */}
+ 
+          <ProtectedRoute exact path="/volunteerPortalPage">
+              <VolunteerPortalPage />
+          </ProtectedRoute>    
+
+{/* EditVolunteerProfile */}
+<ProtectedRoute exact path="/editVolunteerProfile">
+              <EditVolunteerProfile />
+          </ProtectedRoute>   
+
+{/* PenpalProfiles */}
+<ProtectedRoute exact path="/penpalProfiles">
+              <PenpalProfiles />
+          </ProtectedRoute>              
+
+{/* WritingTips */}
+<ProtectedRoute exact path="/writingTips">
+              <WritingTips />
+          </ProtectedRoute>  
+
+
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
@@ -60,13 +129,13 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
-          <ProtectedRoute
+          <Route
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/info"
           >
             <InfoPage />
-          </ProtectedRoute>
+          </Route>
 
           <Route
             exact
