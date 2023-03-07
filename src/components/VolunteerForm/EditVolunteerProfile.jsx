@@ -42,11 +42,6 @@ const handleDeleteVolunteerProfile = (event) => {
 
 
 
-
-
-
-
-
 return (
     <>
      <form>
@@ -72,8 +67,8 @@ return (
 
 
 
-     {/* name inputs */}
-       <div className="row mt-2">
+     {/* first name, last name inputs */}
+        <div className="row mt-2">
             <div className="col-md-6">
                 <label className="labels">First Name</label>
                     <input 
@@ -81,8 +76,7 @@ return (
                         className="form-control"
                         value={volunteerToEdit.first_name || ''}
                         onChange={(evt) => dispatch({type: 'EDIT_FIRST_NAME', payload: evt.target.value})}
-                    /></div>
-                    {/* closes First Name */}
+                    /></div> {/* closes First Name */}
 
             <div className="col-md-6">
                 <label className="labels">Last Name</label>
@@ -91,8 +85,7 @@ return (
                         className="form-control"
                         value={volunteerToEdit.last_name || ''}
                         onChange={(evt) => dispatch({type: 'EDIT_LAST_NAME', payload: evt.target.value})}
-                    /></div>
-                    {/* closes Last Name  */}
+                    /></div> {/* closes Last Name  */}
         </div>{/* closes first name / last name row */}
 
 
