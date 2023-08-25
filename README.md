@@ -1,121 +1,84 @@
+The Action Committee for Women in Prison Website
 
-# Prime Solo Project Starting Repo
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
+## Description
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+The ACWIP advocates for the humane and compassionate treatment of incarcerated women; specifically focusing on incarcerated women with children.
 
-## Use the Template for This Repository (Don't Clone)
+The ACWIP’s original website is very cluttered, confusing and difficult to navigate through. With their website being in that state, they run the risk of someone who is looking for more information or worse yet, someone who wants to get involved, clicking away from ACWIP’s site to find one that they can more easily interact with.
 
-- Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account. Make the project `PUBLIC`!
+In order to clearly communicate with the user and capture their attention I designed and engineered the following:
 
+- A clean homepage with quick links to information about the organization, their work and how to become a volunteer
+- Linked pages with clear and easily digestible content
+- A built-out volunteer portal to allow people to quickly register to become a volunteer and immediately get involved with the organization
 
-## Prerequisites
+This is a Full Stack CRUD React Application.
 
-Before you get started, make sure you have the following software installed on your computer:
+## Technologies used:
 
-- [Node.js](https://nodejs.org/en/)
-- [PostrgeSQL](https://www.postgresql.org/)
-- [Nodemon](https://nodemon.io/)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-## Create database and table
+<!-- ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) -->
 
-Create a new database called `prime_app` and create a `user` table:
+## Features
 
-```SQL
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
-);
-```
+- Navigation: The application includes a navigation bar that allows users to easily switch between different pages.
 
-If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`
+- Protected Routes: Certain routes are protected, meaning they require the user to be logged in to access. If the user is not logged in, they are redirected to the login page.
 
-## Development Setup Instructions
+- User Authentication: User authentication is implemented using Redux and a server API. The application fetches user data upon initialization to determine whether the user is logged in.
 
-- Run `npm install`
-- Create a `.env` file at the root of the project and paste this line into the file:
-  ```
-  SERVER_SESSION_SECRET=superDuperSecret
-  ```
-  While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm run server`
-- Run `npm run client`
-- Navigate to `localhost:3000`
+- Pages: The application includes several pages:
 
-## Debugging
+  - About Page: Provides information about the application and its purpose.
 
-To debug, you will need to run the client-side separately from the server. Start the client by running the command `npm run client`. Start the debugging server by selecting the Debug button.
+  - User Page: A protected route that displays user-specific information and features.
 
-![VSCode Toolbar](documentation/images/vscode-toolbar.png)
+  - Info Page: Displays general information.
 
-Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
+  - Landing Page: The landing page for the application. Redirects to the user page if the user is already logged in.
 
-![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
+  - Login Page: Allows users to log in. If the user is already logged in, they are redirected to the user page.
 
-## Testing Routes with Postman
+  - Registration Page: Allows users to register for the application. If the user is already logged in, they are redirected to the  
+    user page.
 
-To use Postman with this repo, you will need to set up requests in Postman to register a user and login a user at a minimum.
+  - Get Involved Page: Provides information about how users can get involved in the application's activities.
 
-Keep in mind that once you using the login route, Postman will manage your session cookie for you just like a browser, ensuring it is sent with each subsequent request. If you delete the `localhost` cookie in Postman, it will effectively log you out.
+  - Volunteer Form: A protected route that allows users to submit a volunteer form.
 
-1. Start the server - `npm run server`
-2. Import the sample routes JSON file [v2](./PostmanPrimeSoloRoutesv2.json) by clicking `Import` in Postman. Select the file.
-3. Click `Collections` and `Send` the following three calls in order:
-   1. `POST /api/user/register` registers a new user, see body to change username/password
-   2. `POST /api/user/login` will login a user, see body to change username/password
-   3. `GET /api/user` will get user information, by default it's not very much
+  - Volunteer Portal Page: A protected route that displays a portal for volunteers, providing access to relevant information.
 
-After running the login route above, you can try any other route you've created that requires a logged in user!
+  - Edit Volunteer Profile: A protected route that allows users to edit their volunteer profile.
 
-## Production Build
+  - Penpal Profiles: A protected route that displays profiles of penpals.
 
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
+  - Writing Tips: A protected route that provides writing tips for volunteers.
 
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm start`
-- Navigate to `localhost:5000`
+  - Get Acquainted Page: A page for users to get acquainted with the application's features.
 
-## Lay of the Land
+  - Get Informed Page: A page that provides information to users about the application.
 
-There are a few videos linked below that show a walkthrough the client and sever setup to help acclimatize to the boilerplate. Please take some time to watch the videos in order to get a better understanding of what the boilerplate is like.
+## Getting Started
 
-- [Initial Set](https://vimeo.com/453297271)
-- [Server Walkthrough](https://vimeo.com/453297212)
-- [Client Walkthrough](https://vimeo.com/453297124)
+1. Clone the repository to your local machine.
+2. Install the required dependencies using npm install.
+3. Run the application using npm start.
 
-Directory Structure:
+The application should open in your default web browser.
 
-- `src/` contains the React application
-- `public/` contains static assets for the client-side
-- `build/` after you build the project, contains the transpiled code from `src/` and `public/` that will be viewed on the production site
-- `server/` contains the Express App
+## Dependencies
 
-This code is also heavily commented. We recommend reading through the comments, getting a lay of the land, and becoming comfortable with how the code works before you start making too many changes. If you're wondering where to start, consider reading through component file comments in the following order:
-
-- src/components
-  - App/App
-  - Footer/Footer
-  - Nav/Nav
-  - AboutPage/AboutPage
-  - InfoPage/InfoPage
-  - UserPage/UserPage
-  - LoginPage/LoginPage
-  - RegisterPage/RegisterPage
-  - LogOutButton/LogOutButton
-  - ProtectedRoute/ProtectedRoute
-
-## Deployment
-
-1. Create a new Heroku project
-1. Link the Heroku project to the project GitHub Repo
-1. Create an Heroku Postgres database
-1. Connect to the Heroku Postgres database from Postico
-1. Create the necessary tables
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
-1. In the deploy section, select manual deploy
-
-## Update Documentation
-
-Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+- React
+- React Router
+- Redux
